@@ -24,7 +24,7 @@ export default function Header() {
       <div className={styles.linkContainer}>
         {
           Array.from(links).map(([name, href]) => (
-            <Link href={href} className={styles.linkItem}>
+            <Link href={href} className={styles.linkItem} onClick={toggleSidebar}>
               {name}
             </Link>
           ))
