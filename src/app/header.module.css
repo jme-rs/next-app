@@ -41,7 +41,7 @@
   width: 15rem;
   background-color: white;
   transform: translateX(-100%);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
   overflow-y: scroll;
 }
 
@@ -63,7 +63,7 @@
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .wrapper.active {
