@@ -27,9 +27,16 @@
   height: 100%;
 }
 
-.toggleButton:hover {
-  background-color: var(--secondary-color);
-  transition: background-color 0.3s ease;
+@media (hover: hover) {
+  .toggleButton:hover {
+    background-color: var(--secondary-color);
+  }
+}
+
+@media (hover: none) {
+  .toggleButton:active {
+    background-color: var(--secondary-color);
+  }
 }
 
 .title {
