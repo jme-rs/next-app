@@ -1,5 +1,5 @@
-import SyntaxHighlight from "../components/syntaxHighlight";
-import { getGit } from "../utils/fetch";
+import SyntaxHighlight from "../../components/syntaxHighlight";
+import { getGit } from "../../utils/fetch";
 
 export default async function Example() {
   return (

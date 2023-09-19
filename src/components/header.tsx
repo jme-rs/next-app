@@ -1,15 +1,15 @@
 "use client";
 
 import styles from "./header.module.scss";
-import common from "./common.module.scss";
+import common from "../styles/common.module.scss";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -25,7 +25,12 @@ export default function Header() {
       <div className={styles.linkContainer}>
         {
           Array.from(links).map(([name, href]) => (
-            <Link href={href} className={`${styles.linkItem} ${common.hover}`} onClick={toggleSidebar}>
+            <Link
+              href={href}
+              className={`${styles.linkItem} ${common.hover}`}
+              onClick={toggleSidebar}
+              prefetch={false}
+            >
               {name}
             </Link>
           ))
