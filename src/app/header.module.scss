@@ -18,24 +18,11 @@
   height: 3rem;
   width: 3rem;
   padding: 0.4rem;
-  transition: background-color 0.3s ease;
-}
 
-.toggleButton .color {
-  color: var(--primary-color);
-  width: 100%;
-  height: 100%;
-}
-
-@media (hover: hover) {
-  .toggleButton:hover {
-    background-color: var(--secondary-color);
-  }
-}
-
-@media (hover: none) {
-  .toggleButton:active {
-    background-color: var(--secondary-color);
+  .color {
+    color: var(--primary-color);
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -56,14 +43,12 @@
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   overflow-y: scroll;
-}
 
-.sidebar.open {
-  transform: translateX(0);
-}
+  &.open {
+    transform: translateX(0);
+  }
 
-@media (min-width: 768px) {
-  .sidebar {
+  @media (min-width: 768px) {
     overflow: hidden;
   }
 }
@@ -77,13 +62,13 @@
   width: 100vw;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.3s ease;
-}
 
-.wrapper.active {
-  pointer-events: auto;
-  display: block;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 80;
+  &.active {
+    pointer-events: auto;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 80;
+  }
 }
 
 .linkContainer {
@@ -98,9 +83,4 @@
   text-decoration: none;
   font-size: 1.3rem;
   padding: 0.7rem 2rem;
-  transition: background-color 0.3s ease;
-}
-
-.linkItem:hover {
-  background-color: var(--secondary-color);
 }
