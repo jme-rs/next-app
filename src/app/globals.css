@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Consolas";
-  src: url(/consola.ttf) format("truetype");
+  src: url(../../public/consola.ttf) format("truetype");
 }
 
 :root {
