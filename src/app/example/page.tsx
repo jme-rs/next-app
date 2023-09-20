@@ -1,13 +1,19 @@
 import SyntaxHighlight from "../../components/syntaxHighlight";
-import { getGit } from "../../utils/fetch";
 
 export default async function Example() {
   return (
-    <div>Example
+    <div>
+      <div>Example</div>
       <SyntaxHighlight
         lang="rust"
-        codeString={await getGit("jme-rs", "sudoku-rs", "src/sudoku.rs")}
+        owner="jme-rs"
+        repo="sudoku-rs"
+        path="src/main.rs"
       />
+      <div>Example</div>
+      <SyntaxHighlight lang="javascript">
+        consol.log("Hello World");
+      </SyntaxHighlight>
     </div>
   );
 }
