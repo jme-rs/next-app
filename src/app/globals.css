@@ -1,4 +1,10 @@
+@font-face {
+  font-family: "Consolas";
+  src: url(/consola.ttf) format("truetype");
+}
+
 :root {
+  --tablet-breakpoint: 768px;
   --primary-color: #0066ff;
   --secondary-color: #d8e8ff;
   --border-color: #ccc;
@@ -15,8 +21,32 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 .wrapper {
+  display: flex;
+  width: 100%;
   margin-top: 3.1rem;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: var(--tablet-breakpoint);
+}
+
+p,
+h1 {
+  margin: 1.3rem 0 1.3rem 0;
+
+  @media (max-width: 768px) {
+    margin: 1.3rem 1rem 1.3rem 1rem;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
 }

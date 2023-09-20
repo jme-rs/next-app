@@ -2,53 +2,6 @@ export default function Home() {
   return (
     <div>
       Home
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
     </div>
   )
 }

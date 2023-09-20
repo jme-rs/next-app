@@ -18,10 +18,11 @@ export default function Header() {
     ["Home", "/"],
     ["About", "/about"],
     ["Example", "/example"],
+    ["Experimental", "/experimental"],
   ]);
 
   const sidebar = (
-    <div className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
+    <nav className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
       <div className={styles.linkContainer}>
         {
           Array.from(links).map(([name, href]) => (
@@ -36,7 +37,7 @@ export default function Header() {
           ))
         }
       </div>
-    </div>
+    </nav>
   );
 
   return (

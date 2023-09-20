@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'jme - Next.js dev',
-  description: 'y homepage in the future',
+  description: 'My homepage in the future',
 }
 
 export default function RootLayout({
@@ -20,7 +20,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <div className='wrapper'>
-          {children}
+          <main>
+            {children}
+          </main>
         </div>
       </body>
     </html>
