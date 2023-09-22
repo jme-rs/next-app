@@ -1,3 +1,5 @@
+"use client"
+
 import SyntaxHighlight from "../../components/syntaxHighlight";
 import { getCodeFromGithub, getCodeFromLocal } from "@/utils/fetch";
 
