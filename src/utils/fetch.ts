@@ -1,7 +1,7 @@
 export async function getCodeFromGithub(owner: string, repo: string, path: string) {
   const response = await fetch(
     "https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + path,
-    { cache: "no-store" }
+    // { cache: "no-store" }
   );
   if (response.status !== 200) {
     return "error getCodeFromGithub: " + response.status;
