@@ -34,24 +34,41 @@ body {
 main {
   width: 100%;
   max-width: var(--tablet-breakpoint);
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem;
 
   @media (max-width: 768px) {
-    padding: 0 1.1rem 0 1.1rem;
+    padding: 0 1.1rem;
   }
 
   @media (max-width: 480px) {
-    padding: 0 0.7rem 0 0.7rem;
+    padding: 0 0.7rem;
   }
 }
 
-p,
-h1 {
-  margin: 1.3rem 0 1.3rem 0;
+p {
+  margin: 1.3rem 0;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  margin: 1.3rem 0;
   border-bottom: 1px solid var(--border-color);
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.3rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.6rem;
+}
+
+h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1.3rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.2rem;
+}
+
+h4 {
+  border-bottom: none;
 }
