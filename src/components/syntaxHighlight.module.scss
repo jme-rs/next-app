@@ -9,18 +9,16 @@
 
 .filenameTag {
   background-color: var(--secondary-color);
-  border-top-left-radius: 8px;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 8px;
   padding: 0.3rem 1rem 0.3rem;
-
-  @media (min-width: 768px) {
-    border-top-right-radius: 8px;
-  }
 }
 
 .codeFrame {
   overflow-x: auto;
+  border-radius: 0.7rem;
 
-  @media (min-width: 768px) {
-    border-radius: 8px 0 8px 8px;
+  &.withFilename {
+    border-top-right-radius: 0;
   }
 }

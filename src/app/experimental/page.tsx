@@ -1,4 +1,7 @@
+import path from "path";
+import fsPromises from "fs/promises"
 import SyntaxHighlight from "../../components/syntaxHighlight";
+import { getCodeFromGithub, getCodeFromLocal } from "@/utils/fetch";
 
 export default async function Experimental() {
   return (
@@ -7,28 +10,20 @@ export default async function Experimental() {
       <p>コンポーネント実験ページ</p>
       <SyntaxHighlight
         lang="rust"
-        owner="jme-rs"
-        repo="sudoku-rs"
-        path="src/sudoku.rs"
-      />
-      <SyntaxHighlight
-        lang="javascript"
-        path="sample.js"
+        fileName="main.rs"
       >
-        console.log("typescript");
+        {await getCodeFromGithub("jme-rs", "sudoku-rs", "src/main.rs")}
       </SyntaxHighlight>
-      <SyntaxHighlight
+      {/* <SyntaxHighlight
         lang="c"
-        path="sample.c"
+        fileName="example.c"
       >
-        {
-`#include <stdio.h>
-
-int main() {
-    printf("c-lang");
-    return 0;
-}`
-        }
+        {await getCodeFromLocal("./example.c")}
+      </SyntaxHighlight> */}
+      <SyntaxHighlight
+        lang="typescript"
+      >
+        {`console.log("typescript")`}
       </SyntaxHighlight>
     </div>
   );

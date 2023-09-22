@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Consolas";
-  src: url(../../public/consola.ttf) format("truetype");
+  src: url(../assets/fonts/consola.ttf) format("truetype");
 }
 
 :root {
@@ -34,15 +34,20 @@ body {
 main {
   width: 100%;
   max-width: var(--tablet-breakpoint);
+  padding: 0 1.5rem 0 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.1rem 0 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.7rem 0 0.7rem;
+  }
 }
 
 p,
 h1 {
   margin: 1.3rem 0 1.3rem 0;
-
-  @media (max-width: 768px) {
-    margin: 1.3rem 1rem 1.3rem 1rem;
-  }
 }
 
 h1 {
