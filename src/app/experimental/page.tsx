@@ -1,5 +1,3 @@
-import path from "path";
-import fsPromises from "fs/promises"
 import SyntaxHighlight from "../../components/syntaxHighlight";
 import { getCodeFromGithub, getCodeFromLocal } from "@/utils/fetch";
 
