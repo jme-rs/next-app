@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "./header.module.scss";
-import common from "../styles/common.module.scss";
+import common from "@/styles/common.module.scss";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
@@ -17,7 +17,6 @@ export default function Header() {
   const links = new Map([
     ["Home", "/"],
     ["About", "/about"],
-    ["Example", "/example"],
     ["Experimental", "/experimental"],
   ]);
 
@@ -41,15 +40,17 @@ export default function Header() {
   );
 
   return (
-    <div>
-      <div className={styles.container}>
+    <>
+      <header className={styles.container}>
         <button className={`${styles.toggleButton} ${common.hover}`} onClick={toggleSidebar}>
           <FontAwesomeIcon icon={faBars} className={styles.color} />
         </button>
         <div className={styles.title}>jme - Next.js</div>
-      </div>
+      </header>
       <div className={`${styles.wrapper} ${isSidebarOpen ? styles.active : ''}`} onClick={toggleSidebar} />
       {sidebar}
-    </div>
+    </>
   );
 }
+
+export { Header, useState }
