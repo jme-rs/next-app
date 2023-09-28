@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-export default async function Experimental() {
+export default async function Page() {
+  console.log(process.cwd());
+
   return (
     <>
       <h1>Experimental</h1>

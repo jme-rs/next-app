@@ -1,7 +1,7 @@
-import SyntaxHighlighterEx from "@/components/syntaxHighlighterEx";
-import { getCodeFromGithub, getCodeFromLocal } from "@/utils/fetch";
+import SyntaxHighlight from "@/components/syntaxHighlight";
+import { getCodeFromGithub, getLocalFile } from "@/utils/fetch";
 
-export default async function SyntaxHighlight() {
+export default async function Page() {
   return (
     <>
       <h1>Syntax Highlight</h1>
@@ -10,7 +10,7 @@ export default async function SyntaxHighlight() {
 
       <h4>ファイル名のタグ付き</h4>
 
-      <SyntaxHighlighterEx lang="rust" fileName="main.rs">
+      <SyntaxHighlight lang="rust" fileName="main.rs">
         {
           `mod sudoku;
 
@@ -22,21 +22,21 @@ fn main() {
     s.solve();
 }`
         }
-      </SyntaxHighlighterEx>
+      </SyntaxHighlight>
 
-      {/* <SyntaxHighlight
+      <SyntaxHighlight
         lang="c"
         fileName="example.c"
         >
-        {await getCodeFromLocal("./example.c")}
-      </SyntaxHighlight> */}
+        { getLocalFile("src/assets/codes/example.c")}
+      </SyntaxHighlight>
 
       <h4>ファイル名のタグ無し</h4>
-      <SyntaxHighlighterEx
+      <SyntaxHighlight
         lang="typescript"
         >
         {`console.log("typescript")`}
-      </SyntaxHighlighterEx>
+      </SyntaxHighlight>
 
         <h2>説明</h2>
 

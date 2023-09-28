@@ -1,3 +1,6 @@
+import path from "path";
+import fs from "fs";
+
 export async function getCodeFromGithub(owner: string, repo: string, path: string) {
   const response = await fetch(
     "https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + path,
@@ -10,10 +13,11 @@ export async function getCodeFromGithub(owner: string, repo: string, path: strin
   return atob(data.content);
 }
 
-export async function getCodeFromLocal(path: string) {
-  const response = await fetch(path);
-  if (response.status !== 200) {
-    return "error getCodeFromLocal: " + response.status;
+export function getLocalFile(target: string) {
+  target = path.join(process.cwd(), target);
+  const file = fs.readFileSync(target, "utf-8");
+  if (!file) {
+    return "error getLocalFile: " + target;
   }
-  return await response.text();
+  return file;
 }

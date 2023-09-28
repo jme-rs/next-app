@@ -1,9 +1,7 @@
-
-
-export default function ExternalLink() {
+export default function Page() {
   return (
     <>
       <h1>External Link</h1>
     </>
   )
-} 
+}

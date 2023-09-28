@@ -1,7 +1,7 @@
 "use client"
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import styles from "./syntaxHighlighterEx.module.scss";
+import styles from "./syntaxHighlight.module.scss";
 
 export default function SyntaxHighlighterEx(
   {
