@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs";
+import { JSDOM } from "jsdom";
 
 export async function getCodeFromGithub(owner: string, repo: string, path: string) {
   const response = await fetch(
@@ -20,4 +21,11 @@ export function getLocalFile(target: string) {
     return "error getLocalFile: " + target;
   }
   return file;
+}
+
+export async function getDomFromLink(link: string) {
+  const response = await fetch(link);
+  const html = await response.text();
+  const doc = new JSDOM(html).window.document;
+  return doc;
 }
