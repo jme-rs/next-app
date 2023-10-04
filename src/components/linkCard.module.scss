@@ -2,15 +2,18 @@
   border: 1px solid var(--border-color);
   border-radius: 0.7rem;
   display: flex;
+  color: black;
+  text-decoration: none;
+  margin: 1.3rem 0;
 }
 
 .innerContainer {
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   width: 60%;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   overflow: hidden;
   margin-bottom: 0.7rem;
@@ -27,6 +30,6 @@
 
 .link {
   overflow: hidden;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   white-space: nowrap;
 }

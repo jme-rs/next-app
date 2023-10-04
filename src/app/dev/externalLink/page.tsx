@@ -7,7 +7,9 @@ export default function Page() {
 
       <h2>Link Card</h2>
 
-      <LinkCard href="http://google.com" />
+      <LinkCard href="https://zenn.dev/zenn/articles/markdown-guide" />
+
+      <p>google</p>
     </>
   )
 }

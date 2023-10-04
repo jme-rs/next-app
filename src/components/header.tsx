@@ -17,7 +17,7 @@ function Header() {
   const links = new Map([
     ["Home", "/"],
     ["About", "/about"],
-    ["Experimental", "/experimental"],
+    ["Dev", "/dev"],
   ]);
 
   const sidebar = (

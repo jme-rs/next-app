@@ -1,12 +1,12 @@
 import styles from "./linkCard.module.scss";
-import { getDomFromLink } from "@/utils/fetch";
+import { getDomFromURL, getFullIconURL } from "@/utils/fetch";
 import Image from "next/image";
 
 export async function LinkCard({ href }: { href: string }) {
-  const dom = await getDomFromLink(href);
+  const dom = await getDomFromURL(href);
   const title = dom.querySelector("title")?.textContent;
   const description = dom.querySelector("meta[name='description']")?.getAttribute("content");
-  const icon = dom.querySelector("meta[property='icon']")?.getAttribute("content");
+  const icon = getFullIconURL(href, dom);
 
   return (
     <a className={styles.container} href={href}>

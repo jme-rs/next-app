@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Consolas";
-  src: url(../assets/fonts/consola.ttf) format("truetype");
-}
-
 :root {
   --tablet-breakpoint: 768px;
   --primary-color: #0066ff;
@@ -31,7 +26,7 @@ body {
 .wrapper {
   display: flex;
   width: 100%;
-  margin-top: 3.1rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
   justify-content: center;
   flex: 1;
@@ -71,15 +66,10 @@ h2 {
 h3, h4 {
   margin-top: 2rem;
   margin-bottom: 1.3rem;
-  border-bottom: 1px solid var(--border-color);
   font-size: 1.1rem;
 }
 
-h4 {
-  border-bottom: none;
-}
-
 a {
-  color: black;
-  text-decoration: none;
+  /* color: black; */
+  /* text-decoration: none; */
 }

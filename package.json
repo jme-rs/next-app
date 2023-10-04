@@ -22,7 +22,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-syntax-highlighter": "^15.5.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "zenn-content-css": "^0.1.147",
+    "zenn-embed-elements": "^0.1.147",
+    "zenn-markdown-html": "^0.1.147"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.3",

@@ -23,9 +23,30 @@ export function getLocalFile(target: string) {
   return file;
 }
 
-export async function getDomFromLink(link: string) {
-  const response = await fetch(link);
+export async function getDomFromURL(url: string) {
+  const response = await fetch(url);
   const html = await response.text();
   const doc = new JSDOM(html).window.document;
   return doc;
+}
+
+export async function getFullIconURL(url: string, dom: Document) {
+  var maybePath = dom.querySelector("meta[property='icon']")?.getAttribute("content");
+  if (!maybePath) {
+    maybePath = dom.querySelector("link[rel='shortcut icon']")?.getAttribute("href");
+  }
+  if (!maybePath) {
+    return null;
+  }
+
+  let path = maybePath as string;
+  if (path.startsWith("http")) {
+    return path;
+  }
+  else if (path.startsWith("/")) {
+    return new URL(url).href + path;
+  }
+  else {
+    return url + "/" + path;
+  }
 }
