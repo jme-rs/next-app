@@ -15,12 +15,12 @@ export async function LinkCard({ href }: { href: string }) {
         <div className={styles.description}>{description}</div>
         <div className={styles.link}>{href}</div>
       </div>
-      <Image
+      {/* <Image
         src={icon || "/favicon.ico"}
         height={100}
         width={100}
         alt="icon"
-      />
+      /> */}
     </a>
   )
 }
