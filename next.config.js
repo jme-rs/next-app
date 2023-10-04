@@ -3,7 +3,7 @@
 const branchName = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
 
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
 }
 
 module.exports = nextConfig

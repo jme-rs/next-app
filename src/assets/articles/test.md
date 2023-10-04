@@ -31,3 +31,6 @@ https://twitter.com/jack/status/20
 ### github
 
 https://github.com/octocat/Hello-World/blob/master/README
+
+-[ ] item
+-[x] checked item
