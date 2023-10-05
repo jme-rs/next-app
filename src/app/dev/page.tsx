@@ -8,7 +8,9 @@ export default async function Page() {
       <br />
       <Link href="/dev/syntaxHighlight" prefetch={false}>syntaxHighlight</Link>
       <br />
-      <Link href="/dev/markdown" prefetch={false}>markdown</Link>
+      <Link href="/dev/zenn-markdown" prefetch={false}>zenn-markdown</Link>
+      <br />
+      <Link href="/dev/react-markdown" prefetch={false}>react-markdown</Link>
     </>
   );
 }

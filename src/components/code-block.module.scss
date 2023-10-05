@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLA.TTF) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAI.TTF) format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAB.TTF) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAZ.TTF) format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+.container {
+  margin: 1.3rem 0 1.3rem 0;
+}
+
+.filenameSpace {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filenameTag {
+  background-color: var(--secondary-color);
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 8px;
+  padding: 0.3rem 1rem 0.1rem;
+  font-family: "Consolas";
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.codeFrame {
+  overflow-x: auto;
+  border-radius: 0.7rem;
+
+  &.withFilename {
+    border-top-right-radius: 0;
+  }
+}

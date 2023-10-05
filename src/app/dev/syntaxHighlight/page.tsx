@@ -1,4 +1,4 @@
-import SyntaxHighlight from "@/components/syntaxHighlight";
+import SyntaxHighlight from "@/components/code-block";
 import { getCodeFromGithub, getLocalFile } from "@/utils/fetch";
 
 export default async function Page() {

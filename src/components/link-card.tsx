@@ -1,4 +1,4 @@
-import styles from "./linkCard.module.scss";
+import styles from "./link-card.module.scss";
 import { getDomFromURL, getFullIconURL } from "@/utils/fetch";
 import Image from "next/image";
 
