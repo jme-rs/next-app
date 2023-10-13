@@ -1,20 +1,13 @@
-"use client"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import BackLink from "@/components/back-link";
 
 export default function Layout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname();
-  const fragments = pathname.split("/");
-  const backPath = fragments.slice(0, fragments.length - 1).join("/");
-
   return (
     <>
-      ?{}
-      <Link href={backPath}>back</Link>
+      <BackLink />
       {children}
     </>
   )
