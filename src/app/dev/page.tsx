@@ -6,18 +6,34 @@ export default async function Page() {
   return (
     <>
       <h1>Dev</h1>
-      <InternalLinkCard
-        href="/dev/externalLink"
-        title="externalLinkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        date="2000/01/01"
-      />
-      <Link href="/dev/externalLink" prefetch={false}>externalLink</Link>
-      <br />
-      <Link href="/dev/syntaxHighlight" prefetch={false}>syntaxHighlight</Link>
-      <br />
-      <Link href="/dev/zenn-markdown" prefetch={false}>zenn-markdown</Link>
-      <br />
-      <Link href="/dev/react-markdown" prefetch={false}>react-markdown</Link>
+
+      <InternalLinkContainer>
+        <InternalLinkCard
+          href="/dev/externalLink"
+          title="externalLink"
+          date="2000/01/01"
+        />
+        <InternalLinkCard
+          href="/dev/syntaxHighlight"
+          title="syntaxHighlight"
+          date="2000/01/01"
+        />
+        <InternalLinkCard
+          href="/dev/zenn-markdown"
+          title="zenn-markdown"
+          date="2000/01/01"
+        />
+        <InternalLinkCard
+          href="/dev/react-markdown"
+          title="react-markdown"
+          date="2000/01/01"
+        />
+        <InternalLinkCard
+          href="/dev/react-markdown"
+          title="dummy"
+          date="2000/01/01"
+        />
+      </InternalLinkContainer>
     </>
   );
 }

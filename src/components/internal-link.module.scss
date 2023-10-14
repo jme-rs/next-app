@@ -4,6 +4,8 @@
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   width: 10rem;
+  overflow: hidden;
+  background-color: var(--background-color);
   @include hover();
 
   .image {
@@ -13,14 +15,13 @@
   .text {
     border-top: 1px solid var(--border-color);
     padding: 0.5rem;
+    color: black;
 
     .title {
       height: 4rem;
 
       .inner {
-        font-size: 1.2rem;
         margin: 0;
-
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -34,6 +35,17 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      color: gray;
+      text-decoration-color: gray;
     }
   }
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 10rem);
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  margin: 1.3rem 0;
 }

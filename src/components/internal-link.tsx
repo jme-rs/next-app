@@ -5,26 +5,26 @@ export function InternalLinkCard(
   { href, title, date }: { href: string, title: string, date: string }
 ) {
   return (
-    <Link href={href}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <Link href={href} prefetch={false}>
         <div className={styles.image}></div>
         <div className={styles.text}>
           <div className={styles.title}>
-            <p className={styles.inner}>{title}</p>
+            <div className={styles.inner}>{title}</div>
           </div>
           <div className={styles.date}>{date}</div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }
 
 export function InternalLinkContainer(
-  { href, children }: { href: string, children: React.ReactNode }
+  { children }: { children: React.ReactNode }
 ) {
   return (
-    <div>
-
+    <div className={styles.cardContainer}>
+      {children}
     </div>
   )
 }
