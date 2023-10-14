@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./header.module.scss";
-import common from "@/styles/common.module.scss";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -27,7 +26,7 @@ function Header() {
           Array.from(links).map(([name, href]) => (
             <Link
               href={href}
-              className={`${styles.linkItem} ${common.hover}`}
+              className={styles.linkItem}
               onClick={toggleSidebar}
               prefetch={false}
             >
@@ -42,7 +41,7 @@ function Header() {
   return (
     <>
       <header className={styles.container}>
-        <button className={`${styles.toggleButton} ${common.hover}`} onClick={toggleSidebar}>
+        <button className={styles.toggleButton} onClick={toggleSidebar}>
           <FontAwesomeIcon icon={faBars} className={styles.color} />
         </button>
         <div className={styles.title}>jme - Next.js</div>

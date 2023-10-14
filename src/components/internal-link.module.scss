@@ -1,3 +1,39 @@
+@import "../styles/common.module.scss";
+
 .container {
-  
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  width: 10rem;
+  @include hover();
+
+  .image {
+    height: 6rem;
+  }
+
+  .text {
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem;
+
+    .title {
+      height: 4rem;
+
+      .inner {
+        font-size: 1.2rem;
+        margin: 0;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    .date {
+      height: 1rem;
+      font-size: 0.7rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
 }
