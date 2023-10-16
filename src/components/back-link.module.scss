@@ -8,6 +8,11 @@
   @include hover();
   position: relative;
   left: -0.5rem;
+  @include link-hover();
+  color: var(--primary-color);
+  :hover {
+    text-decoration: underline var(--primary-color);
+  }
 }
 
 .link {
@@ -16,14 +21,15 @@
   flex-direction: row;
   font-size: 1.2rem;
   align-items: center;
-  @include link-hover();
 }
 
 .icon {
   height: 1.2rem;
   width: 1.2rem;
+  color: var(--primary-color);
 }
 
 .text {
   padding: 0 0.5rem;
+  color: var(--primary-color);
 }
