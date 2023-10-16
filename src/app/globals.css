@@ -2,7 +2,7 @@
   --tablet-breakpoint: 768px;
   --primary-color: #0066ff;
   --secondary-color: #d8e8ff;
-  --border-color: #ccc;
+  --border-color: #ddd;
   --background-color: #fffaf2;
 }
 
@@ -82,12 +82,8 @@ h4 {
 }
 
 a {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 

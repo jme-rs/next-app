@@ -1,7 +1,6 @@
 @import "../styles/common.module.scss";
 
 .container {
-  padding: 0.5rem;
   width: fit-content;
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
@@ -12,10 +11,12 @@
 }
 
 .link {
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   font-size: 1.2rem;
   align-items: center;
+  @include link-hover();
 }
 
 .icon {

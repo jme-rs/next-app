@@ -1,31 +1,36 @@
 @import "../styles/common.module.scss";
 
 .container {
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  width: 10rem;
+  width: 20rem;
   overflow: hidden;
-  background-color: var(--background-color);
+  border-radius: 0.5rem;
   @include hover();
+  @include shadow();
+  // @include link-hover();
 
   .image {
-    height: 6rem;
+    height: 11rem;
   }
 
   .text {
-    border-top: 1px solid var(--border-color);
     padding: 0.5rem;
-    color: black;
+    padding-top: 0;
 
     .title {
-      height: 4rem;
+      // display: flex;
+      // align-items: center;
+      height: 3rem;
 
       .inner {
+        font-size: 1.1rem;
         margin: 0;
         overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+        color: black;
       }
     }
 
@@ -36,14 +41,13 @@
       justify-content: flex-end;
       align-items: center;
       color: gray;
-      text-decoration-color: gray;
     }
   }
 }
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 10rem);
+  grid-template-columns: repeat(auto-fill, 20rem);
   gap: 1.5rem;
   width: 100%;
   justify-content: center;

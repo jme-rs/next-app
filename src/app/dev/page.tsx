@@ -11,12 +11,12 @@ export default async function Page() {
         <InternalLinkCard
           href="/dev/externalLink"
           title="externalLink"
-          date="2000/01/01"
+          date="2000-01-01"
         />
         <InternalLinkCard
           href="/dev/syntaxHighlight"
-          title="syntaxHighlight"
-          date="2000/01/01"
+          title="syntaxHighlight overflow overflow overflow overflow overflow overflow overflow overflow overflow"
+          date="2000-01-01"
         />
         <InternalLinkCard
           href="/dev/zenn-markdown"
