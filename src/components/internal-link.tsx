@@ -14,7 +14,7 @@ export function InternalLinkCard(
             {imgPath ?
               <Image src={imgPath} alt="thumbnail" />
               :
-              <Image src="/images/next.svg" alt="thumbnail" priority width="320" height="160" />
+              <Image src="/next.svg" alt="thumbnail" priority width="320" height="160" />
             }
           </div>
         </div>
