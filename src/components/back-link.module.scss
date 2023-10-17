@@ -9,7 +9,7 @@
   @include hover();
   position: relative;
   left: -0.5rem;
-  color: var(--primary-color);
+  color: map-get($map: $colors, $key: primary);
 }
 
 .link {
