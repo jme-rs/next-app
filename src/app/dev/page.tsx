@@ -30,7 +30,12 @@ export default async function Page() {
         />
         <InternalLinkCard
           href="/dev/react-markdown"
-          title="dummy"
+          title="dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy"
+          date="2000/01/01"
+        />
+        <InternalLinkCard
+          href="/dev/react-markdown"
+          title=" ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー"
           date="2000/01/01"
         />
       </InternalLinkContainer>

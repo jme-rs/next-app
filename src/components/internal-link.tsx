@@ -10,13 +10,14 @@ export function InternalLinkCard(
     <div className={styles.container}>
       <Link href={href} prefetch={false}>
         <div className={styles.image}>
-          {imgPath ?
-            <Image src={imgPath} alt="thumbnail" />
-            :
-            <Image src="/images/next.svg" alt="thumbnail" priority width="320" height="160" />
-          }
+          <div className={styles.inner}>
+            {imgPath ?
+              <Image src={imgPath} alt="thumbnail" />
+              :
+              <Image src="/images/next.svg" alt="thumbnail" priority width="320" height="160" />
+            }
+          </div>
         </div>
-
         <div className={styles.text}>
           <div className={styles.title}>
             <div className={styles.inner}>{title}</div>

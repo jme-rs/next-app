@@ -18,7 +18,7 @@
 }
 
 @mixin shadow {
-  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15);
 }
 
 @mixin noLinkUnderline {
