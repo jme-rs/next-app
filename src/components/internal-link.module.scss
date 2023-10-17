@@ -1,4 +1,4 @@
-@import "../styles/common.module.scss";
+@import "@/styles/common.scss";
 
 .container {
   width: 20rem;
@@ -6,7 +6,16 @@
   border-radius: 0.5rem;
   @include hover();
   @include shadow();
-  // @include link-hover();
+
+  :hover {
+    .inner {
+      text-decoration: underline black;
+    }
+
+    .date {
+      text-decoration: underline gray;
+    }
+  }
 
   .image {
     height: 11rem;
@@ -17,16 +26,12 @@
     padding-top: 0;
 
     .title {
-      // display: flex;
-      // align-items: center;
       height: 3rem;
 
       .inner {
         font-size: 1.1rem;
         margin: 0;
         overflow: hidden;
-        // text-overflow: ellipsis;
-        // white-space: nowrap;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;

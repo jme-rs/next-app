@@ -1,27 +1,29 @@
+@import "/src/styles/variables.scss";
+
 @font-face {
   font-family: "Consolas";
-  src: url(../assets/fonts/CONSOLA.TTF) format("truetype");
+  src: url(/fonts/CONSOLA.TTF) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Consolas";
-  src: url(../assets/fonts/CONSOLAI.TTF) format("truetype");
+  src: url(/fonts/CONSOLAI.TTF) format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Consolas";
-  src: url(../assets/fonts/CONSOLAB.TTF) format("truetype");
+  src: url(/fonts/CONSOLAB.TTF) format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Consolas";
-  src: url(../assets/fonts/CONSOLAZ.TTF) format("truetype");
+  src: url(/fonts/CONSOLAZ.TTF) format("truetype");
   font-weight: bold;
   font-style: italic;
 }
@@ -36,7 +38,7 @@
 }
 
 .filenameTag {
-  background-color: var(--secondary-color);
+  background-color: map-get($map: $colors, $key: secondary);
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 8px;
   padding: 0.3rem 1rem 0.1rem;

@@ -1,3 +1,5 @@
+@import "@/styles/common.scss";
+
 :root {
   --tablet-breakpoint: 768px;
   --primary-color: #0066ff;
@@ -35,20 +37,30 @@ body {
 
 main {
   width: 100%;
-  max-width: var(--tablet-breakpoint);
+  /* max-width: var(--tablet-breakpoint); */
+  max-width: 990px;
   padding: 0 1.5rem;
+
+  @media (max-width: 990px) {
+    padding: 0 0.7rem;
+  }
 
   @media (max-width: 768px) {
     padding: 0 1.1rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0 0.7rem;
   }
 }
 
 p {
   margin: 1.3rem 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1 {

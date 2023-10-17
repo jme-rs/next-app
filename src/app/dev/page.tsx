@@ -10,12 +10,12 @@ export default async function Page() {
       <InternalLinkContainer>
         <InternalLinkCard
           href="/dev/externalLink"
-          title="externalLink"
+          title="外部リンク"
           date="2000-01-01"
         />
         <InternalLinkCard
           href="/dev/syntaxHighlight"
-          title="syntaxHighlight overflow overflow overflow overflow overflow overflow overflow overflow overflow"
+          title="シンタックスハイライト"
           date="2000-01-01"
         />
         <InternalLinkCard

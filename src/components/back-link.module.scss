@@ -1,4 +1,5 @@
-@import "../styles/common.module.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/common.scss";
 
 .container {
   width: fit-content;
@@ -8,11 +9,7 @@
   @include hover();
   position: relative;
   left: -0.5rem;
-  @include link-hover();
   color: var(--primary-color);
-  :hover {
-    text-decoration: underline var(--primary-color);
-  }
 }
 
 .link {
@@ -26,10 +23,8 @@
 .icon {
   height: 1.2rem;
   width: 1.2rem;
-  color: var(--primary-color);
 }
 
 .text {
   padding: 0 0.5rem;
-  color: var(--primary-color);
 }

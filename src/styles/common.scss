@@ -1,0 +1,28 @@
+@import "@/styles/variables.scss";
+
+@mixin hover {
+  transition: background-color 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      // background-color: var(--secondary-color);
+      background-color: map-get($map: $colors, $key: secondary);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: map-get($map: $colors, $key: secondary);
+    }
+  }
+}
+
+@mixin shadow {
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@mixin noLinkUnderline {
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -3,18 +3,17 @@ import Image from "next/image";
 import styles from "./internal-link.module.scss";
 
 export function InternalLinkCard(
-  { href, title, date, imgPath = "" }:
+  { href, title, date, imgPath }:
     { href: string, title: string, date: string, imgPath?: string }
 ) {
   return (
     <div className={styles.container}>
       <Link href={href} prefetch={false}>
         <div className={styles.image}>
-
-          {imgPath == "" ?
-            <Image src="/next.svg" alt="thumbnail" width="320" height="160" />
-            :
+          {imgPath ?
             <Image src={imgPath} alt="thumbnail" />
+            :
+            <Image src="/images/next.svg" alt="thumbnail" priority width="320" height="160" />
           }
         </div>
 
