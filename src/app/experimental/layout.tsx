@@ -1,4 +1,4 @@
-import BackLink from "@/components/back-link";
+
 
 export default function Layout({
   children,
@@ -7,7 +7,6 @@ export default function Layout({
 }) {
   return (
     <>
-      <BackLink />
       {children}
     </>
   )

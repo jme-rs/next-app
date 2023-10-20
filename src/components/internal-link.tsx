@@ -3,8 +3,8 @@ import Image from "next/image";
 import styles from "./internal-link.module.scss";
 
 export function InternalLinkCard(
-  { href, title, date, imgPath }:
-    { href: string, title: string, date: string, imgPath?: string }
+  { href, title, tag, date, imgPath }:
+    { href: string, title?: string, tag?: string, date?: string, imgPath?: string }
 ) {
   return (
     <div className={styles.container}>

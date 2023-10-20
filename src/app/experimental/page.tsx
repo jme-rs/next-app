@@ -1,40 +1,39 @@
-import Link from "next/link";
 import { InternalLinkCard, InternalLinkContainer }
   from "@/components/internal-link";
 
 export default async function Page() {
   return (
     <>
-      <h1>Dev</h1>
+      <h1>Experimental</h1>
 
       <InternalLinkContainer>
         <InternalLinkCard
-          href="/dev/externalLink"
+          href="/experimental/externalLink"
           title="外部リンク"
           date="2000-01-01"
         />
         <InternalLinkCard
-          href="/dev/syntaxHighlight"
+          href="/experimental/syntaxHighlight"
           title="シンタックスハイライト"
           date="2000-01-01"
         />
         <InternalLinkCard
-          href="/dev/zenn-markdown"
+          href="/experimental/zenn-markdown"
           title="zenn-markdown"
           date="2000/01/01"
         />
         <InternalLinkCard
-          href="/dev/react-markdown"
+          href="/experimental/react-markdown"
           title="react-markdown"
           date="2000/01/01"
         />
         <InternalLinkCard
-          href="/dev/react-markdown"
+          href="/experimental/react-markdown"
           title="dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy"
           date="2000/01/01"
         />
         <InternalLinkCard
-          href="/dev/react-markdown"
+          href="/experimental/react-markdown"
           title=" ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー ダミー"
           date="2000/01/01"
         />

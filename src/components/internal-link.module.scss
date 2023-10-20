@@ -1,11 +1,11 @@
 @import "/src/styles/common.scss";
+@import "/src/styles/variables.scss";
 
 .container {
-  // width: 20rem;
   overflow: hidden;
   border-radius: 1rem;
   @include hover();
-  // @include shadow();
+  // border: solid 1px map-get($map: $colors, $key: border);
 
   :hover {
     .inner {
