@@ -1,4 +1,3 @@
-
 @import "/src/styles/variables.scss";
 @import "/src/styles/common.scss";
 
@@ -12,10 +11,15 @@
   width: 100%;
   height: 3rem;
   background-color: white;
-  border-bottom: 1px solid map-get($map: $colors, $key: border);
+  // border-bottom: 1px solid map-get($map: $colors, $key: border);
+
+  body.dark {
+    color: map-get($map: $colors, $key: dark-letter);
+    background-color: map-get($map: $colors, $key: dark-background);
+  }
 }
 
-.toggleButton {
+.menuButton {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -25,11 +29,37 @@
   @include hover();
   border-radius: 0.3rem;
   margin: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .color {
     color: map-get($map: $colors, $key: primary);
     width: 100%;
     height: 100%;
+  }
+}
+
+.themeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.2rem;
+  @include hover();
+  border-radius: 0.3rem;
+  margin: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+
+  .mode {
+    color: map-get($map: $colors, $key: primary);
+    width: 80%;
+    height: 80%;
   }
 }
 

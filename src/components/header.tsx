@@ -1,16 +1,22 @@
 "use client";
-
 import styles from "./header.module.scss";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import MenuIcon from '@mui/icons-material/Menu';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
-function Header() {
+export function Header() {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle("dark");
   };
 
   const links = new Map([
@@ -42,15 +48,21 @@ function Header() {
   return (
     <>
       <header className={styles.container}>
-        <button className={styles.toggleButton} onClick={toggleSidebar}>
-          <FontAwesomeIcon icon={faBars} className={styles.color} />
+        <button className={styles.menuButton} onClick={toggleSidebar}>
+          {/* <FontAwesomeIcon icon={faBars} className={styles.color} /> */}
+          <MenuIcon className={styles.color} />
         </button>
         <div className={styles.title}>jme - Next.js</div>
+        <button className={styles.themeButton} onClick={toggleDarkMode}>
+          {isDarkMode ?
+            <DarkModeOutlinedIcon className={styles.mode} />
+            :
+            <LightModeOutlinedIcon className={styles.mode} />
+          }
+        </button>
       </header>
       <div className={`${styles.wrapper} ${isSidebarOpen ? styles.active : ''}`} onClick={toggleSidebar} />
       {sidebar}
     </>
   );
 }
-
-export { Header, useState }

@@ -22,7 +22,7 @@
 
     .inner {
       height: 9rem;
-      background-color: aqua;
+      background-color: map-get($map: $colors, $key: primary);
       overflow:  hidden;
       border-radius: 0.5rem;
     }

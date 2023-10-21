@@ -1,8 +1,9 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import styles from "./back-link.module.scss";
 
 export default function BackLink() {
@@ -15,7 +16,8 @@ export default function BackLink() {
       {fragments.length != 2 &&
         <div className={styles.container}>
           <Link href={backPath} className={styles.link}>
-            <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} />
+            {/* <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} /> */}
+            <NavigateBeforeIcon className={styles.icon} />
             <div className={styles.text}>{backPath}</div>
           </Link>
         </div>
