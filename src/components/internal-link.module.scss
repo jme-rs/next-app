@@ -5,11 +5,11 @@
   overflow: hidden;
   border-radius: 1rem;
   @include hover();
-  // border: solid 1px map-get($map: $colors, $key: border);
 
   :hover {
     .inner {
       text-decoration: underline var(--text-color);
+      -webkit-text-decoration: underline var(--text-color);
     }
 
     .date {
@@ -22,7 +22,7 @@
 
     .inner {
       height: 9rem;
-      background-color: var(--primary-color);
+      background-color: rgba(128, 128, 128, 0.5);
       overflow:  hidden;
       border-radius: 0.5rem;
     }
