@@ -9,7 +9,7 @@
 
   :hover {
     .inner {
-      text-decoration: underline black;
+      text-decoration: underline var(--text-color);
     }
 
     .date {
@@ -42,7 +42,7 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        color: black;
+        color: var(--text-color);
       }
     }
 
