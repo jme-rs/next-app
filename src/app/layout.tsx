@@ -47,7 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="apple-touch-icon" sizes="256x256" href={BASE_PATH + "/icon-256x256.png"} />
+        <link rel="apple-touch-icon" sizes="256x256" href={BASE_PATH + "/icon-256x256.png"} />
+        <link rel="manifest" href={BASE_PATH + "/manifest.json"}></link>
       </head>
       <body className={inter.className} data-theme="light">
         <Header />

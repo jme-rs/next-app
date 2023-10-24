@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
 
-  const BASE_PATH = process.env.BRANCH_NAME || "";
+  const BASE_PATH = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
 
   return {
     theme_color: "#005fb1",
