@@ -5,6 +5,7 @@ import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import Cookies from "js-cookie";
 
 export function Header() {
 
@@ -24,7 +25,20 @@ export function Header() {
   useEffect(() => {
     document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
     console.log("dark mode: " + isDarkMode);
+    Cookies.set("darkMode", isDarkMode ? "true" : "false", { expires: 3 });
   }, [isDarkMode]);
+
+
+  // initialize dark mode
+  useEffect(() => {
+    const darkMode = Cookies.get("darkMode");
+    console.log("initial dark mode: " + darkMode);
+    if (darkMode === "true") {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
+  }, []);
 
 
   // links
@@ -35,6 +49,8 @@ export function Header() {
     ["About", "/about"],
   ]);
 
+
+  // navigation
   const sidebar = (
     <nav className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
       <div className={styles.linkContainer}>
@@ -54,12 +70,15 @@ export function Header() {
     </nav>
   );
 
+
+  // for PWA
   const pwaMeta = (
     isDarkMode ?
       <meta name="theme-color" content="#222222" />
       :
       <meta name="theme-color" content="#ffffff" />
   );
+
 
   return (
     <>
