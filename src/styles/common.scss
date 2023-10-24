@@ -22,6 +22,6 @@
   }
 }
 
-@mixin darkModeAnimation {
-  transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+@mixin animation {
+  transition: all 0.3s ease;
 }
