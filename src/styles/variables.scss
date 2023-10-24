@@ -1,11 +1,19 @@
-$colors: (
+$light: (
   primary: #004581,
   secondary: #d8e8ff,
   border: #eee,
-  background: #fffaf2,
 
-  dark-letter: #eee,
-  dark-background: #222,
+  text: black,
+  background: #fffaf2,
+);
+
+$dark: (
+  primary: #004581,
+  secondary: #d8e8ff,
+  border: #eee,
+
+  text: #eee,
+  background: #333,
 );
 
 $breakpoints: (

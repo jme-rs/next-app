@@ -38,7 +38,7 @@
 }
 
 .filenameTag {
-  background-color: map-get($map: $colors, $key: secondary);
+  background-color: var(--secondary-color);
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 8px;
   padding: 0.3rem 1rem 0.1rem;

@@ -8,17 +8,26 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 export function Header() {
 
+  // sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+
+  // dark mode
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle("dark");
   };
 
+  useEffect(() => {
+    document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+    console.log("dark mode: " + isDarkMode);
+  }, [isDarkMode]);
+
+
+  // links
   const links = new Map([
     ["Home", "/"],
     ["Blog", "/blog"],

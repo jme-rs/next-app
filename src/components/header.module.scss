@@ -10,13 +10,9 @@
   align-items: center;
   width: 100%;
   height: 3rem;
-  background-color: white;
-  // border-bottom: 1px solid map-get($map: $colors, $key: border);
-
-  body.dark {
-    color: map-get($map: $colors, $key: dark-letter);
-    background-color: map-get($map: $colors, $key: dark-background);
-  }
+  color: var(--text-color);
+  background-color: var(--background-color);
+  @include darkModeAnimation();
 }
 
 .menuButton {
@@ -34,7 +30,7 @@
   justify-content: center;
 
   .color {
-    color: map-get($map: $colors, $key: primary);
+    color: var(--primary-color);
     width: 100%;
     height: 100%;
   }
@@ -57,7 +53,7 @@
   right: 0;
 
   .mode {
-    color: map-get($map: $colors, $key: primary);
+    color: var(--primary-color);
     width: 80%;
     height: 80%;
   }
@@ -76,13 +72,15 @@
   z-index: 90;
   height: 100vh;
   width: 15rem;
-  background-color: white;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
   overflow-y: auto;
   // padding-left: 1rem;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  @include darkModeAnimation();
+  color: var(--text-color);
+  background-color: var(--background-color);
+  // transition: transform 0.3s ease;
 
   &.open {
     transform: translateX(0);
@@ -113,7 +111,7 @@
 }
 
 .linkItem {
-  color: black;
+  color: var(--text-color);
   font-size: 1.3rem;
   padding-left: 3rem;
   display: flex;
