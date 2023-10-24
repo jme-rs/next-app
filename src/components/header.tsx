@@ -61,7 +61,7 @@ export function Header() {
           {/* <FontAwesomeIcon icon={faBars} className={styles.color} /> */}
           <MenuIcon className={styles.color} />
         </button>
-        <div className={styles.title}>jme - Next.js</div>
+        <div className={styles.title}>jme Blog</div>
         <button className={styles.themeButton} onClick={toggleDarkMode}>
           {isDarkMode ?
             <DarkModeOutlinedIcon className={styles.mode} />
