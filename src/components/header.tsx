@@ -54,8 +54,16 @@ export function Header() {
     </nav>
   );
 
+  const pwaMeta = (
+    isDarkMode ?
+      <meta name="theme-color" content="#222222" />
+      :
+      <meta name="theme-color" content="#ffffff" />
+  );
+
   return (
     <>
+      {pwaMeta}
       <header className={styles.container}>
         <button className={styles.menuButton} onClick={toggleSidebar}>
           {/* <FontAwesomeIcon icon={faBars} className={styles.color} /> */}
