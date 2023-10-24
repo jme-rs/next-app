@@ -1,5 +1,5 @@
-import { InternalLinkCard, InternalLinkContainer }
-  from "@/components/internal-link";
+// import { InternalLinkCard, InternalLinkContainer }
+//   from "@/components/internal-link";
 
 export default function Home() {
   return (

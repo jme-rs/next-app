@@ -20,7 +20,7 @@ export function InternalLinkCard(
 ) {
 
   // const BASE_PATH = branchName ? branchName : "";
-  const BASE_PATH = process.env.BRANCH_NAME ? process.env.BRANCH_NAME : "";
+  const BASE_PATH = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
 
   return (
     <div className={styles.container}>
@@ -30,7 +30,7 @@ export function InternalLinkCard(
             {imgPath ?
               <Image src={BASE_PATH + imgPath} alt="thumbnail" />
               :
-              <Image src={BASE_PATH + "/next.svg"} alt="thumbnail" priority width="320" height="160" />
+              <Image src={BASE_PATH + "/images/next.svg"} alt="thumbnail" priority width="320" height="160" />
             }
           </div>
         </div>

@@ -22,9 +22,13 @@
 
     .inner {
       height: 9rem;
-      background-color: rgba(128, 128, 128, 0.5);
+      background-color: rgba(149, 202, 255, 0.5);
       overflow:  hidden;
       border-radius: 0.5rem;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
     }
   }
 
