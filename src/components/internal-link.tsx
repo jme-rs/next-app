@@ -18,19 +18,15 @@ export function InternalLinkCard(
       imgPath?: string
     }
 ) {
-
-  // const BASE_PATH = branchName ? branchName : "";
-  const BASE_PATH = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
-
   return (
     <div className={styles.container}>
       <Link href={href} prefetch={false}>
         <div className={styles.image}>
           <div className={styles.inner}>
             {imgPath ?
-              <Image src={BASE_PATH + imgPath} alt="thumbnail" />
+              <Image src={imgPath} alt="thumbnail" />
               :
-              <Image src={BASE_PATH + "/images/next.svg"} alt="thumbnail" priority width="320" height="160" />
+              <Image src={"/images/next.svg"} alt="thumbnail" priority width="320" height="160" />
             }
           </div>
         </div>

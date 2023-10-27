@@ -6,29 +6,28 @@ import Footer from "@/components/footer";
 import BackLink from "@/components/back-link";
 
 const inter = Inter({ subsets: ['latin'] })
-const BASE_PATH = process.env.BRANCH_NAME ? "/" + process.env.BRANCH_NAME : "";
 
 export const metadata: Metadata = {
   title: 'jme Blog',
   description: 'Tech Blog by jme',
   icons: [
     {
-      url: BASE_PATH + "/icon-192x192.png",
+      url: "/icon-192x192.png",
       sizes: "192x192",
       type: "image/png"
     },
     {
-      url: BASE_PATH + "/icon-256x256.png",
+      url: "/icon-256x256.png",
       sizes: "256x256",
       type: "image/png"
     },
     {
-      url: BASE_PATH + "/icon-384x384.png",
+      url: "/icon-384x384.png",
       sizes: "384x384",
       type: "image/png"
     },
     {
-      url: BASE_PATH + "/icon-512x512.png",
+      url: "/icon-512x512.png",
       sizes: "512x512",
       type: "image/png"
     }
@@ -47,8 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="apple-touch-icon" sizes="256x256" href={BASE_PATH + "/icon-256x256.png"} />
-        <link rel="manifest" href={BASE_PATH + "/manifest.json"}></link>
+        <link rel="apple-touch-icon" sizes="256x256" href={"/icon-256x256.png"} />
+        <link rel="manifest" href={"/manifest.json"}></link>
       </head>
       <body className={inter.className} data-theme="light">
         <Header />
