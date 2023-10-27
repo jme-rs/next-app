@@ -4,19 +4,19 @@ import styles from "./internal-link.module.scss";
 // import { branchName } from "../../next.config";
 
 export function InternalLinkCard(
-  { href,
+  {
+    href,
     title,
     tag,
     date,
-    imgPath
-  }:
-    {
-      href: string,
-      title?: string,
-      tag?: string,
-      date?: string,
-      imgPath?: string
-    }
+    imgPath,
+  }: {
+    href: string,
+    title?: string,
+    tag?: string,
+    date?: string,
+    imgPath?: string,
+  }
 ) {
   return (
     <div className={styles.container}>

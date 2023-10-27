@@ -1,0 +1,49 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  border-radius: 2rem;
+  padding: 2rem;
+
+  .title {
+    max-width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .date {
+    color: var(--light-text-color);
+    // margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // position: relative;
+    // justify-content: right;
+
+    .icon {
+      margin-right: 0.5rem;
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    .text {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+
+  .tagContainer {
+    display: flex;
+    flex-direction: row;
+    // position: relative;
+    // justify-content: right;
+
+    .tag {
+      color: var(--primary-color);
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}

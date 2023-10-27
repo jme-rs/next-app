@@ -5,11 +5,11 @@ export default function Page() {
     <>
       <h1>External Link</h1>
 
-      <h2>Link Card</h2>
+      <p>
+        外部リンクを表示するコンポーネント。
+      </p>
 
       <LinkCard href="https://zenn.dev/zenn/articles/markdown-guide" />
-
-      <p>google</p>
     </>
   )
 }
