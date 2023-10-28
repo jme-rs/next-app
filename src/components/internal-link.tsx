@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./internal-link.module.scss";
-// import { branchName } from "../../next.config";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 export function InternalLinkCard(
   {
@@ -34,7 +34,10 @@ export function InternalLinkCard(
           <div className={styles.title}>
             <div className={styles.inner}>{title}</div>
           </div>
-          <div className={styles.date}>{date}</div>
+          <div className={styles.dateContainer}>
+            <AccessTimeIcon className={styles.icon} />
+            <div className={styles.date}>{date}</div>
+          </div>
         </div>
       </Link>
     </div>

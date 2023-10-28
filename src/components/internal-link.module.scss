@@ -23,7 +23,7 @@
     .inner {
       height: 9rem;
       background-color: rgba(149, 202, 255, 0.5);
-      overflow:  hidden;
+      overflow: hidden;
       border-radius: 0.5rem;
       display: flex;
       position: relative;
@@ -50,13 +50,28 @@
       }
     }
 
-    .date {
-      height: 1rem;
-      font-size: 0.7rem;
+    .dateContainer {
+
       display: flex;
-      justify-content: flex-start;
+      flex-direction: row;
+      position: relative;
       align-items: center;
-      color: gray;
+      justify-content: right;
+
+      .icon {
+        width: 0.8rem;
+        height: 0.8rem;
+        color: var(--light-text-color);
+        margin-right: 0.5rem;
+      }
+
+      .date {
+        height: 1rem;
+        font-size: 0.7rem;
+        display: flex;
+        text-align: right;
+        color: gray;
+      }
     }
   }
 }
