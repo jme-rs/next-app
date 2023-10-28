@@ -1,12 +1,21 @@
 import { InternalLinkCard, InternalLinkContainer }
   from "@/components/internal-link";
+import PageHeader from "@/components/page-header";
 
 export default async function Page() {
   return (
     <>
-      <h1>Experimental</h1>
+      <PageHeader
+        title="Experimental Page"
+        description="実験的なコンポーネント置き場"
+      />
 
       <InternalLinkContainer>
+        <InternalLinkCard
+          href="/experimental/remark"
+          title="remark を利用したマークダウンの表示"
+          date="2023-10-28"
+        />
         <InternalLinkCard
           href="/experimental/article-header"
           title="記事のヘッダー"

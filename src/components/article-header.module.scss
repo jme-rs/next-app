@@ -1,3 +1,5 @@
+@import "/src/styles/common.scss";
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -5,13 +7,22 @@
   border-radius: 1rem;
   padding: 2rem;
   padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 
   .title {
     max-width: 100%;
     font-size: 1.6rem;
     text-align: center;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
   }
 
   .date {
@@ -47,4 +58,10 @@
       font-size: 0.9rem;
     }
   }
+}
+
+.devbar {
+  background-color: var(--border-color);
+  height: 1px;
+  @include animation();
 }

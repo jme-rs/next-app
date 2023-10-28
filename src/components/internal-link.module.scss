@@ -47,6 +47,7 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         color: var(--text-color);
+        @include animation();
       }
     }
 
