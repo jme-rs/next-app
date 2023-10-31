@@ -1,31 +1,54 @@
-"use client"
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+// "use client"
+// import SyntaxHighlighter from "react-syntax-highlighter";
+// import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import styles from "./code-block.module.scss";
+import shiki from "shiki";
 
-export default function CodeBlock(
-  {
-    children = "",
-    lang = "",
-    fileName = "",
-  }
-) {
+export default async function CodeBlock({
+  children,
+  lang = "",
+  fileName = "",
+}: {
+  children: string,
+  lang?: string,
+  fileName?: string,
+}) {
+
+  // const highlighter = await shiki.getHighlighter({
+  //   theme: "dark-plus",
+  // });
+  // var htmlString = highlighter.codeToHtml(code, { lang: "js" });
+
+  const highlighter = await shiki.getHighlighter({ theme: "dark-plus" });
+  const tokens = highlighter.codeToThemedTokens(children, lang);
+  const htmlString = shiki.renderToHtml(tokens, {
+    bg: highlighter.getBackgroundColor("dark-plus"),
+    elements: {
+      pre({ className, style, children }) {
+        return `<pre class="${className} ${styles.srcCode}" style="${style}" tabindex="0">${children}</pre>`;
+      },
+    }
+  })
+
   return (
     <div className={styles.container}>
-      {fileName.length > 0 &&
+      {fileName &&
         <div className={styles.filenameSpace}>
           <div className={styles.filenameTag}>{fileName}</div>
         </div>
       }
-      <div className={`${styles.codeFrame} ${fileName !== "" ? styles.withFilename : ""}`}>
-        <SyntaxHighlighter
+      <div
+        className={`${styles.codeFrame} ${fileName !== "" ? styles.withFilename : ""}`}
+        dangerouslySetInnerHTML={{ __html: htmlString }}
+      >
+        {/* <SyntaxHighlighter
           language={lang}
           style={vs2015}
           codeTagProps={{ style: { fontFamily: "Consolas", fontSize: "0.9rem" } }}
           customStyle={{ padding: "1.2rem 0.9rem" }}
         >
           {children}
-        </SyntaxHighlighter>
+        </SyntaxHighlighter> */}
       </div>
     </div>
   );

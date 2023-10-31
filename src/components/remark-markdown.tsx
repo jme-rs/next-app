@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
-import rehypePrettyCode from 'rehype-pretty-code';
+// import rehypePrettyCode from 'rehype-pretty-code';
 import { getLocalFile } from '@/utils/fetch';
 import remarkMdx from 'remark-mdx'
 
@@ -20,11 +20,11 @@ export default async function RemarkMarkdown({
     .use(remarkGfm)
     .use(remarkMdx)
     .use(remarkRehype)
-    .use(rehypePrettyCode, {
-      theme: "dark-plus",
-    })
+    // .use(rehypePrettyCode, {
+    //   theme: "dark-plus",
+    // })
     .use(rehypeStringify)
-    .process(src)
+    .process(src);
 
   return (
     <>

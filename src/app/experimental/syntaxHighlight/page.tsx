@@ -16,6 +16,12 @@ export default async function Page() {
         将来的には shiki に以降するかも?
       </p>
 
+      <h3>追記</h3>
+
+      <p>
+        shiki に移行した。
+      </p>
+
       <h4>ファイル名のタグ付き</h4>
 
       <SyntaxHighlight lang="rust" fileName="main.rs">
