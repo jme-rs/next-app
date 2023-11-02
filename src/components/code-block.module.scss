@@ -33,19 +33,14 @@
 }
 
 .filenameSpace {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.filenameTag {
   background-color: var(--secondary-color);
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 8px;
-  padding: 0.3rem 1rem 0.2rem;
-  font-family: "Consolas";
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
   font-size: 0.9rem;
-  font-weight: bold;
-  // font-family: "Inter";
 }
 
 .pre {
@@ -63,6 +58,7 @@
   border-radius: 1rem;
 
   &.withFilename {
+    border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 }

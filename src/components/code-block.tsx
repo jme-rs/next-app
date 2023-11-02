@@ -36,12 +36,10 @@ export default async function CodeBlock({
   return (
     <div className={styles.container}>
       {fileName &&
-        <div className={styles.filenameSpace}>
-          <div className={styles.filenameTag}>{fileName}</div>
-        </div>
+        <div className={styles.filenameSpace}>{fileName}</div>
       }
       <div
-        className={`${styles.codeFrame} ${fileName !== "" ? styles.withFilename : ""}`}
+        className={`${styles.codeFrame} ${fileName ? styles.withFilename : ""}`}
         dangerouslySetInnerHTML={{ __html: htmlString }}
       >
         {/* <SyntaxHighlighter
