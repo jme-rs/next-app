@@ -1,8 +1,9 @@
 import styles from "./article-header.module.scss"
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { Tag } from "./tag";
 
 export default function ArticleHeader({
-  title, description, tags = [], date,
+  title, description, tags, date,
 }: {
   title: string, description?: string, tags?: string[], date?: string,
 }) {
@@ -12,9 +13,7 @@ export default function ArticleHeader({
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
         <div className={styles.tagContainer}>
-          {tags.map((tag) => (
-            <div className={styles.tag}>#{tag}</div>
-          ))}
+          <Tag tags={tags} />
         </div>
         {date &&
           <div className={styles.date}>
@@ -23,7 +22,7 @@ export default function ArticleHeader({
           </div>
         }
       </div>
-      <div className={styles.devbar} />
+      {/* <div className={styles.devbar} /> */}
     </>
   )
 }

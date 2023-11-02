@@ -14,6 +14,7 @@ export default async function Page() {
         <InternalLinkCard
           href="/experimental/remark"
           title="remark を利用したマークダウンの表示"
+          tags={["jsx"]}
           date="2023-10-28"
         />
         <InternalLinkCard

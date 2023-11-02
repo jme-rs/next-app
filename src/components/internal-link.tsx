@@ -2,18 +2,19 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./internal-link.module.scss";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { Tag } from "./tag";
 
 export function InternalLinkCard(
   {
     href,
     title,
-    tag,
+    tags,
     date,
     imgPath,
   }: {
     href: string,
     title?: string,
-    tag?: string,
+    tags?: string[],
     date?: string,
     imgPath?: string,
   }
@@ -33,6 +34,9 @@ export function InternalLinkCard(
         <div className={styles.text}>
           <div className={styles.title}>
             <div className={styles.inner}>{title}</div>
+          </div>
+          <div className={styles.tagContainer}>
+            <Tag tags={tags} />
           </div>
           <div className={styles.dateContainer}>
             <AccessTimeIcon className={styles.icon} />

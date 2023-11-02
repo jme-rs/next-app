@@ -5,6 +5,7 @@
   overflow: hidden;
   border-radius: 1rem;
   @include hover();
+  // background-color: white;
 
   :hover {
     .inner {
@@ -15,6 +16,10 @@
     .date {
       text-decoration: underline gray;
     }
+
+    .tagContainer {
+      text-decoration: underline var(--text-color);
+    }
   }
 
   .image {
@@ -22,7 +27,7 @@
 
     .inner {
       height: 9rem;
-      background-color: rgba(149, 202, 255, 0.5);
+      background-color: rgba(149, 202, 255, 0.232);
       overflow: hidden;
       border-radius: 0.5rem;
       display: flex;
@@ -51,8 +56,13 @@
       }
     }
 
-    .dateContainer {
+    .tagContainer {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      height: 1.5rem;
+    }
 
+    .dateContainer {
       display: flex;
       flex-direction: row;
       position: relative;
@@ -70,7 +80,7 @@
         height: 1rem;
         font-size: 0.7rem;
         display: flex;
-        text-align: right;
+        align-items: center;
         color: gray;
       }
     }
@@ -79,8 +89,9 @@
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   gap: 1rem;
+  row-gap: 3rem;
   width: 100%;
   justify-content: center;
   margin: 1.3rem 0;
