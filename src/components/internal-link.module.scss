@@ -7,18 +7,38 @@
   @include hover();
   // background-color: white;
 
-  :hover {
-    .inner {
-      text-decoration: underline var(--text-color);
-      -webkit-text-decoration: underline var(--text-color);
-    }
+  @media (hover: hover) {
+    :hover {
+      .inner {
+        text-decoration: underline var(--text-color);
+        -webkit-text-decoration: underline var(--text-color);
+      }
 
-    .date {
-      text-decoration: underline gray;
-    }
+      .date {
+        text-decoration: underline gray;
+      }
 
-    .tagContainer {
-      text-decoration: underline var(--text-color);
+      .tagContainer {
+        text-decoration: underline var(--text-color) !important;
+      }
+    }
+  }
+
+  @media (hover: none) {
+    :active {
+      .inner {
+        text-decoration: underline var(--text-color);
+        -webkit-text-decoration: underline var(--text-color);
+      }
+
+      .date {
+        text-decoration: underline gray;
+      }
+
+      .tagContainer {
+        text-decoration: underline var(--text-color);
+        -webkit-text-decoration: underline var(--text-color);
+      }
     }
   }
 
