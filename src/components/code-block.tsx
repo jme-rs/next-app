@@ -6,8 +6,8 @@ import shiki from "shiki";
 
 export default async function CodeBlock({
   children,
-  lang = "",
-  fileName = "",
+  lang,
+  fileName,
 }: {
   children: string,
   lang?: string,
@@ -25,8 +25,11 @@ export default async function CodeBlock({
     bg: highlighter.getBackgroundColor("dark-plus"),
     elements: {
       pre({ className, style, children }) {
-        return `<pre class="${className} ${styles.srcCode}" style="${style}" tabindex="0">${children}</pre>`;
+        return `<pre class="${className} ${styles.pre}" style="${style}" tabindex="0">${children}</pre>`;
       },
+      code({ children }) {
+        return `<code class="${styles.code}">${children}</code>`
+      }
     }
   })
 
