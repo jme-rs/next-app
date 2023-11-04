@@ -2,7 +2,7 @@
 title: Next.js でブログを作ってみた
 description:
 publishedAt: 2020-08-31
-tags: ["next.js", "dev"]
+tags: [next.js, dev]
 ---
 
 Next.js でブログを作ってみた。  

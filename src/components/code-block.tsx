@@ -23,6 +23,7 @@ export default async function CodeBlock({
   const tokens = highlighter.codeToThemedTokens(children, lang);
   const htmlString = shiki.renderToHtml(tokens, {
     bg: highlighter.getBackgroundColor("dark-plus"),
+    fg: highlighter.getForegroundColor("dark-plus"),
     elements: {
       pre({ className, style, children }) {
         return `<pre class="${className} ${styles.pre}" style="${style}" tabindex="0">${children}</pre>`;
@@ -30,7 +31,7 @@ export default async function CodeBlock({
       code({ children }) {
         return `<code class="${styles.code}">${children}</code>`
       }
-    }
+    } 
   })
 
   return (

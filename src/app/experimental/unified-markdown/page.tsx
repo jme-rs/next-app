@@ -1,9 +1,9 @@
-import RemarkMarkdown from "@/components/unified-markdown";
+import UnifiedMarkdown from "@/components/unified-markdown";
 
 export default function Page() {
   return (
     <>
-      <RemarkMarkdown
+      <UnifiedMarkdown
         srcPath="/src/assets/articles/test.mdx"
       />
     </>
