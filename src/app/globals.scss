@@ -1,6 +1,34 @@
 // @import "@/styles/variables.scss";
 @import "@/styles/common.scss";
 
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLA.TTF) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAI.TTF) format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAB.TTF) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url(../assets/fonts/CONSOLAZ.TTF) format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -21,7 +49,7 @@ body {
   &[data-theme="light"] {
     --primary-color: #006ac6;
     --secondary-color: #e6f1ff;
-    --border-color: #eee;
+    --border-color: #ddd;
     --text-color: black;
     --background-color: rgb(255, 255, 255);
   }
@@ -29,7 +57,7 @@ body {
   &[data-theme="dark"] {
     --primary-color: #47a9ff;
     --secondary-color: #68a7ff24;
-    --border-color: #333;
+    --border-color: #404040;
     --text-color: #eee;
     --background-color: #222;
   }
@@ -53,7 +81,7 @@ body {
 }
 
 main {
-  width: 800px;
+  width: 900px;
   /* max-width: var(--tablet-breakpoint); */
   // max-width: 990px;
   padding: 0 1.5rem;
@@ -68,7 +96,7 @@ main {
 }
 
 p {
-  margin: 1.3rem 0;
+  margin: 2rem 0;
 }
 
 a {
@@ -89,7 +117,7 @@ a {
 }
 
 h1 {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
   // border-bottom: 1px solid map-get($map: $colors, $key: border);
   font-size: 1.7rem;
@@ -97,7 +125,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   // border-bottom: 1px solid map-get($map: $colors, $key: border);
   font-size: 1.5rem;
@@ -105,15 +133,15 @@ h2 {
 }
 
 h3 {
-  margin-top: 2rem;
-  margin-bottom: 1.3rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
   font-size: 1.3rem;
   line-height: 2.5rem;
 }
 
 h4 {
   margin-top: 2rem;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
   line-height: 2rem;
 }
@@ -126,4 +154,27 @@ a {
 
 ul {
   padding-left: 1.5rem;
+  margin: 3rem 0;
 }
+
+table {
+  margin: 3rem 0;
+  border-collapse: collapse;
+
+  th {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+  }
+
+  td {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+  }
+}
+
+// code {
+//   background-color: var(--secondary-color);
+//   padding: 0.2rem 0.4rem;
+//   border-radius: 6px;
+// }

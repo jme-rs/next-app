@@ -16,13 +16,13 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 
-function removePreFromCodeBlocks() {
+function extractCodeBlock() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === 'code' && parent.tagName === 'pre') {
-        parent.tagName = node.tagName;
+        // parent.tagName = node.tagName;
         parent.children = node.children;
-        parent.properties = node.properties;
+        parent.properties.className = node.properties.className;
       }
     });
   };
@@ -31,15 +31,15 @@ function removePreFromCodeBlocks() {
 const processor = unified()
   .use(remarkParse)
   .use(remarkFrontmatter)
-  .use(remarkBreaks)
+  // .use(remarkBreaks)
   .use(remarkGfm)
   .use(remarkMdx)
   .use(remarkRehype)
-  .use(removePreFromCodeBlocks)
+  .use(extractCodeBlock)
   .use(rehypeReact, {
     ...prod,
     components: {
-      code: (props: any) => {
+      pre: (props: any) => {
         var lang: string | undefined;
         var fileName: string | undefined;
         const className = props.className?.replace("language-", "").split(":");
@@ -73,16 +73,14 @@ export default async function UnifiedMarkdown({
 
   const src = getLocalFile(srcPath);
 
-  const parsed = processor.parse(src);
+  // const parsed = processor.parse(src);
   // console.log(inspect(parsed));
-  const hast = await processor.run(parsed);
-  console.log(inspect(hast));
+  // const hast = await processor.run(parsed);
+  // console.log(inspect(hast));
   const content = processor.processSync(src).result;
 
   return (
     <>
-      {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
-      {/* {(await processor.process(src)).toString()} */}
       {content}
     </>
   )
