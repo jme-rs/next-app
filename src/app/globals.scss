@@ -16,12 +16,13 @@ body {
   display: flex;
   flex-direction: column;
 
+  --light-text-color: gray;
+
   &[data-theme="light"] {
     --primary-color: #006ac6;
     --secondary-color: #e6f1ff;
     --border-color: #eee;
     --text-color: black;
-    --light-text-color: gray;
     --background-color: rgb(255, 255, 255);
   }
 
@@ -30,7 +31,6 @@ body {
     --secondary-color: #68a7ff24;
     --border-color: #333;
     --text-color: #eee;
-    --light-text-color: gray;
     --background-color: #222;
   }
 

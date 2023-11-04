@@ -1,4 +1,4 @@
-import RemarkMarkdown from "@/components/remark-markdown";
+import RemarkMarkdown from "@/components/unified-markdown";
 
 export default function Page() {
   return (
