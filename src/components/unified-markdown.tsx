@@ -14,6 +14,10 @@ import * as prod from "react/jsx-runtime";
 import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeToc from "rehype-toc";
+import ArticleHeader from './article-header';
+import remarkExtractFrontmatter from "remark-extract-frontmatter";
+import yaml from "yaml";
 
 
 function extractCodeBlock() {
@@ -31,6 +35,10 @@ function extractCodeBlock() {
 const processor = unified()
   .use(remarkParse)
   .use(remarkFrontmatter)
+  .use(remarkExtractFrontmatter, {
+    yaml: yaml.parse,
+    name: 'frontMatter'  // result.data 配下のキー名を決める
+  })
   // .use(remarkBreaks)
   .use(remarkGfm)
   .use(remarkMdx)
@@ -62,7 +70,8 @@ const processor = unified()
     },
   } as any)
   .use(rehypeSlug)
-  .use(rehypeAutolinkHeadings);
+  .use(rehypeAutolinkHeadings)
+  .use(rehypeToc);
 
 
 export default async function UnifiedMarkdown({
@@ -77,11 +86,23 @@ export default async function UnifiedMarkdown({
   // console.log(inspect(parsed));
   // const hast = await processor.run(parsed);
   // console.log(inspect(hast));
-  const content = processor.processSync(src).result;
+  const content = processor.processSync(src);
+  const frontMatter: {
+    title: string,
+    description: string
+    tags: string[],
+    date: string,
+  } = content.data.frontMatter as any;
 
   return (
     <>
-      {content}
+      <ArticleHeader
+        title={frontMatter.title}
+        description={frontMatter.description}
+        tags={frontMatter.tags}
+        date={frontMatter.date}
+      />
+      {content.result}
     </>
   )
 }
