@@ -16,9 +16,18 @@
   }
 }
 
-@mixin noLinkUnderline {
-  &:hover {
-    text-decoration: none;
+@mixin removeTextDecoration {
+
+  &:hover,
+  :hover {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
+
+  &:active,
+  :active {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
   }
 }
 

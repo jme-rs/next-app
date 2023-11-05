@@ -117,7 +117,7 @@
   align-items: center;
   height: 3rem;
   @include hover();
-  @include noLinkUnderline();
+  @include removeTextDecoration();
   border-radius: 0.5rem;
   margin: 0.5rem;
   @include animation();

@@ -40,7 +40,7 @@ const processor = unified()
   .use(remarkFrontmatter)
   .use(remarkExtractFrontmatter, {
     yaml: yaml.parse,
-    name: 'frontMatter'  // result.data 配下のキー名を決める
+    name: 'frontMatter'
   })
   // .use(remarkBreaks)
   .use(remarkGfm)
@@ -74,7 +74,7 @@ const processor = unified()
   } as any)
   .use(rehypeSlug)
   .use(rehypeAutolinkHeadings)
-  .use(rehypeToc);
+  .use(rehypeToc, { headings: ["h2", "h3"] });
 
 
 export default async function UnifiedMarkdown({

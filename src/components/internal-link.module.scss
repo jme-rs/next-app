@@ -6,6 +6,7 @@
   border-radius: 1rem;
   @include hover();
   // background-color: white;
+  // @include removeTextDecoration();
 
   @media (hover: hover) {
     :hover {
@@ -19,7 +20,7 @@
       }
 
       .tagContainer {
-        text-decoration: underline var(--text-color) !important;
+        text-decoration: underline var(--tag-color);
       }
     }
   }
@@ -36,8 +37,7 @@
       }
 
       .tagContainer {
-        text-decoration: underline var(--text-color);
-        -webkit-text-decoration: underline var(--text-color);
+        text-decoration: underline var(--tag-color);
       }
     }
   }
@@ -80,7 +80,8 @@
       color: var(--text-color);
       margin-bottom: 0.5rem;
       height: 1.5rem;
-      @include animation();
+      // @include animation();
+      @include removeTextDecoration();
     }
 
     .dateContainer {

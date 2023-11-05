@@ -10,6 +10,7 @@
     width: 1.2rem;
     height: 1.2rem;
     animation: color 0.3s ease;
+    color: var(--tag-color);
   }
 
   .tagContainer {
@@ -18,8 +19,12 @@
 
     .tag {
       margin-right: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.5rem;
       color: var(--text-color);
       @include animation();
+      background-color: var(--tag-color);
+      color: white;
     }
   }
 }
