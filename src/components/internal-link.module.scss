@@ -6,7 +6,7 @@
   border-radius: 1rem;
   @include hover();
   // background-color: white;
-  // @include removeTextDecoration();
+  @include removeTextDecoration();
 
   @media (hover: hover) {
     :hover {
@@ -38,6 +38,7 @@
 
       .tagContainer {
         text-decoration: underline var(--tag-color);
+        -webkit-text-decoration: underline var(--tag-color);
       }
     }
   }
