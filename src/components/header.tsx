@@ -31,13 +31,7 @@ export function Header() {
 
   // initialize dark mode
   useEffect(() => {
-    const darkMode = Cookies.get("darkMode");
-    console.log("initial dark mode: " + darkMode);
-    if (darkMode === "true") {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
+    setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
   }, []);
 
 

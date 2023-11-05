@@ -80,6 +80,7 @@
       color: var(--text-color);
       margin-bottom: 0.5rem;
       height: 1.5rem;
+      @include animation();
     }
 
     .dateContainer {

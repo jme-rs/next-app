@@ -28,6 +28,9 @@ function extractCodeBlock() {
         parent.children = node.children;
         parent.properties.className = node.properties.className;
       }
+      else if (node.tagName === "code") {
+        node.properties.className = "inline-code-block"
+      }
     });
   };
 }
@@ -87,12 +90,12 @@ export default async function UnifiedMarkdown({
   // const hast = await processor.run(parsed);
   // console.log(inspect(hast));
   const content = processor.processSync(src);
-  const frontMatter: {
+  const frontMatter = content.data.frontMatter as {
     title: string,
     description: string
     tags: string[],
     date: string,
-  } = content.data.frontMatter as any;
+  };
 
   return (
     <>

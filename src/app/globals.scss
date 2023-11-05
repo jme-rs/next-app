@@ -97,6 +97,7 @@ main {
 
 p {
   margin: 2rem 0;
+  line-height: 1.8rem;
 }
 
 a {
@@ -182,16 +183,19 @@ table {
   }
 }
 
-// code {
-//   background-color: var(--secondary-color);
-//   padding: 0.2rem 0.4rem;
-//   border-radius: 6px;
-// }
-.toc {
+code.inline-code-block {
+  background-color: var(--secondary-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-family: Consolas, monospace;
+}
+
+nav.toc {
   margin: 3rem 0;
+  padding-left: 2rem;
 
   ol {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 
     li {
       margin: 0.5rem 0;
