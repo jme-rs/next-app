@@ -6,7 +6,7 @@ export default async function Page() {
   return (
     <>
       <PageHeader
-        title="⚠️Experimental Page"
+        title="⚠️Experimental"
         description="実験的なコンポーネント置き場"
       />
 

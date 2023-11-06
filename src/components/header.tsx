@@ -39,7 +39,7 @@ export function Header() {
   const links = new Map([
     ["Home", "/"],
     ["Blog", "/blog"],
-    ["⚠️Experimental", "/experimental"],
+    ["⚠️Exp", "/experimental"],
     ["About", "/about"],
   ]);
 
