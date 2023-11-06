@@ -53,6 +53,7 @@ body {
     --text-color: black;
     --background-color: rgb(255, 255, 255);
     --tag-color: #399681;
+    --backquote-color: #555;
   }
 
   &[data-theme="dark"] {
@@ -62,6 +63,7 @@ body {
     --text-color: #eee;
     --background-color: #222;
     --tag-color: #2c7564;
+    --backquote-color: #ccc;
   }
 
   color: var(--text-color);
@@ -83,17 +85,17 @@ body {
 }
 
 main {
-  width: 900px;
+  width: 100%;
   /* max-width: var(--tablet-breakpoint); */
-  // max-width: 990px;
-  padding: 0 1.5rem;
+  max-width: 990px;
+  padding: 0 3rem;
 
   @media (max-width: 800px) {
-    padding: 0 1.1rem;
+    padding: 0 2rem;
   }
 
   @media (max-width: 500px) {
-    padding: 0 0.7rem;
+    padding: 0 1rem;
   }
 }
 
@@ -155,11 +157,6 @@ h4 {
   line-height: 2rem;
 }
 
-// a {
-//   /* color: var(--primary-color); */
-//   text-decoration: none;
-// }
-
 ul {
   padding-left: 1.5rem;
   margin: 3rem 0;
@@ -202,5 +199,29 @@ nav.toc {
     li {
       margin: 0.5rem 0;
     }
+  }
+}
+
+sup a {
+  padding-top: 4rem;
+  margin-top: -4rem;
+  margin: 0 0.2rem;
+}
+
+blockquote {
+  margin: 2rem 0;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 0.3rem solid var(--border-color);
+  @include animation();
+
+  p {
+    color: var(--backquote-color);
+  }
+}
+
+.footnotes {
+  ol {
+    padding-left: 2rem;
   }
 }

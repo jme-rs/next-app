@@ -2,34 +2,35 @@
 
 .container {
   margin: 3rem 0;
-}
 
-.filenameSpace {
-  background-color: var(--secondary-color);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
-}
+  .filenameSpace {
+    background-color: var(--secondary-color);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+  }
 
-.pre {
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
+  .codeFrame {
+    border-radius: 1rem;
+    overflow: hidden;
 
-.code {
-  font-family: "Consolas";
-}
+    &.withFilename {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
 
-.codeFrame {
-  overflow-x: auto;
-  border-radius: 1rem;
+    .pre {
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      overflow-x: auto;
 
-  &.withFilename {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+      .code {
+        font-family: "Consolas";
+      }
+    }
   }
 }

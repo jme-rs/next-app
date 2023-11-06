@@ -19,7 +19,9 @@ import ArticleHeader from './article-header';
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
 
-
+//
+// extensions
+//
 function extractCodeBlock() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
@@ -35,6 +37,20 @@ function extractCodeBlock() {
   };
 }
 
+function chanegeFootnoteName() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === "h2" && node.properties.id === "footnote-label") {
+        node.children[0].value = "参考文献";
+      }
+    });
+  };
+}
+
+
+//
+// processor
+//
 const processor = unified()
   .use(remarkParse)
   .use(remarkFrontmatter)
@@ -72,6 +88,7 @@ const processor = unified()
       },
     },
   } as any)
+  .use(chanegeFootnoteName)
   .use(rehypeSlug)
   .use(rehypeAutolinkHeadings)
   .use(rehypeToc, { headings: ["h2", "h3"] });
@@ -85,10 +102,16 @@ export default async function UnifiedMarkdown({
 
   const src = getLocalFile(srcPath);
 
+
+  //
+  // debug
+  //
   // const parsed = processor.parse(src);
   // console.log(inspect(parsed));
   // const hast = await processor.run(parsed);
   // console.log(inspect(hast));
+
+
   const content = processor.processSync(src);
   const frontMatter = content.data.frontMatter as {
     title: string,

@@ -5,13 +5,19 @@ date: 2000-01-01
 tags: [next.js, dev]
 ---
 
+
+
 # h1
 
 Rust（ラスト）は、性能、メモリ安全性、安全な並行性を目指して設計されたマルチパラダイムのプログラミング言語である。
-C言語、C++に代わるシステムプログラミング言語を目指しており[2]、構文的にはC++に似ているが[3]、「ボローチェッカー」(borrow checker) で
+C言語、C++に代わるシステムプログラミング言語を目指しており[^2]、構文的にはC++に似ているが[3]、「ボローチェッカー」(borrow checker) で
 参照の有効性を検証することによってメモリ安全性を保証できる。
 Rustはガベージコレクションなしでのメモリ安全性を達成しており、
 必要な場面で参照カウントを使うこともできる[4][5]。
+
+[^2]: 注釈
+
+
 
 ## h2
 
@@ -32,8 +38,11 @@ In December 2022, it became the first language other than C and assembly to be s
 
 Rust has been noted for its rapid adoption,[15] and has been studied in programming language theory research.[16][17][18]
 
-text **bold** `code`
+text **bold** `code`  
 *italic* ~~strike~~
+
+> text **bold** `code`  
+> *italic* ~~strike~~
 
 :::message
 info
@@ -51,6 +60,15 @@ info
 import { unified } from 'unified';
 console.log("test");
 ```
+
+> ```ts
+> {
+>   type: 'element',
+>   tagName: 'h2',
+>   properties: { className: [ 'sr-only' ], id: 'footnote-label' },
+>   children: [ { type: 'text', value: 'Footnotes' } ]
+> }
+> ```
 
 ### link
 
