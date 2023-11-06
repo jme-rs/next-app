@@ -9,7 +9,7 @@ export default function Page() {
         外部リンクを表示するコンポーネント。
       </p>
 
-      <LinkCard href="https://zenn.dev/zenn/articles/markdown-guide" />
+      <LinkCard href="https://twitter.com/jack/status/20" />
     </>
   )
 }

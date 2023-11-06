@@ -60,10 +60,10 @@ body {
     --primary-color: #47a9ff;
     --secondary-color: #68a7ff24;
     --border-color: #404040;
-    --text-color: #eee;
+    --text-color: #ccc;
     --background-color: #222;
     --tag-color: #2c7564;
-    --backquote-color: #ccc;
+    --backquote-color: #bbb;
   }
 
   color: var(--text-color);
@@ -224,4 +224,8 @@ blockquote {
   ol {
     padding-left: 2rem;
   }
+}
+
+iframe {
+  height: 100%;
 }

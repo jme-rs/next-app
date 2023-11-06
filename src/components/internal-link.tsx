@@ -39,7 +39,9 @@ export function InternalLinkCard(
             <Tag tags={tags} />
           </div>
           <div className={styles.dateContainer}>
-            <AccessTimeIcon className={styles.icon} />
+            {date &&
+              <AccessTimeIcon className={styles.icon} />
+            }
             <div className={styles.date}>{date}</div>
           </div>
         </div>

@@ -31,8 +31,8 @@ export default async function CodeBlock({
       code({ children }) {
         return `<code class="${styles.code}">${children}</code>`
       }
-    } 
-  })
+    }
+  }) 
 
   return (
     <div className={styles.container}>
