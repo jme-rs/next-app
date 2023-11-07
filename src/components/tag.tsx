@@ -9,7 +9,7 @@ export function Tag({ tags }: { tags?: string[] }) {
           <LocalOfferOutlinedIcon className={styles.icon} />
           <div className={styles.tagContainer}>
             {tags.map((tag) => (
-              <div className={styles.tag}>{tag}</div>
+              <div className={styles.tag} key={tag}>{tag}</div>
             ))}
           </div>
         </div>

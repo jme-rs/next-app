@@ -1,3 +1,7 @@
 ## About
 
-My first webpage with next.js.
+Tech and everyday life blog.
+
+## process
+
+Now building.

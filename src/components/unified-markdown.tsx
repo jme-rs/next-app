@@ -18,6 +18,8 @@ import rehypeToc from "rehype-toc";
 import ArticleHeader from './article-header';
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
+// import rehypeWrap from "rehype-wrap-all";
+import { parseSelector } from "hast-util-parse-selector";
 
 //
 // extensions
@@ -47,6 +49,18 @@ function chanegeFootnoteName() {
   };
 }
 
+function tableWrapper() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === "table") {
+        const wrapper = parseSelector("div");
+        wrapper.children = [node];
+        wrapper.properties.className = "table-wrapper";
+        parent.children[index as number] = wrapper;
+      }
+    });
+  };
+}
 
 //
 // processor
@@ -89,6 +103,7 @@ const processor = unified()
     },
   } as any)
   .use(chanegeFootnoteName)
+  .use(tableWrapper)
   .use(rehypeSlug)
   .use(rehypeAutolinkHeadings)
   .use(rehypeToc, { headings: ["h2", "h3"] });

@@ -55,6 +55,7 @@ export function Header() {
               className={styles.linkItem}
               onClick={toggleSidebar}
               prefetch={false}
+              key={name}
             >
               {name}
             </Link>
