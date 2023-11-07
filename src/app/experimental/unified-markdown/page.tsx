@@ -1,9 +1,9 @@
-import UnifiedMarkdown from "@/components/unified-markdown";
+import Article from "@/components/article";
 
 export default function Page() {
   return (
     <>
-      <UnifiedMarkdown
+      <Article
         srcPath="/src/assets/articles/test.mdx"
       />
     </>

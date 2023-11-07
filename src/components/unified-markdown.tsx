@@ -3,7 +3,6 @@ import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
-import { getLocalFile } from '@/utils/fetch';
 import remarkMdx from 'remark-mdx'
 import rehypeReact from "rehype-react";
 import remarkFrontmatter from "remark-frontmatter";
@@ -15,11 +14,10 @@ import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeToc from "rehype-toc";
-import ArticleHeader from './article-header';
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
-// import rehypeWrap from "rehype-wrap-all";
 import { parseSelector } from "hast-util-parse-selector";
+import { LinkCard } from './link-card';
 
 //
 // extensions
@@ -100,6 +98,13 @@ const processor = unified()
           </CodeBlock>
         )
       },
+      // a: (props: any) => {
+      //   return (
+      //     <LinkCard
+      //       href={props.href}
+      //     />
+      //   )
+      // }
     },
   } as any)
   .use(chanegeFootnoteName)
@@ -108,42 +113,4 @@ const processor = unified()
   .use(rehypeAutolinkHeadings)
   .use(rehypeToc, { headings: ["h2", "h3"] });
 
-
-export default async function UnifiedMarkdown({
-  srcPath,
-}: {
-  srcPath: string,
-}) {
-
-  const src = getLocalFile(srcPath);
-
-
-  //
-  // debug
-  //
-  // const parsed = processor.parse(src);
-  // console.log(inspect(parsed));
-  // const hast = await processor.run(parsed);
-  // console.log(inspect(hast));
-
-
-  const content = processor.processSync(src);
-  const frontMatter = content.data.frontMatter as {
-    title: string,
-    description: string
-    tags: string[],
-    date: string,
-  };
-
-  return (
-    <>
-      <ArticleHeader
-        title={frontMatter.title}
-        description={frontMatter.description}
-        tags={frontMatter.tags}
-        date={frontMatter.date}
-      />
-      {content.result}
-    </>
-  )
-}
+export default processor;

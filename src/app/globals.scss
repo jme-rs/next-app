@@ -142,7 +142,7 @@ h1 {
 h2 {
   margin-top: -1rem;
   margin-bottom: 2rem;
-  // border-bottom: 1px solid map-get($map: $colors, $key: border);
+  border-bottom: 1px solid var(--secondary-color);
   font-size: 1.5rem;
   line-height: 3rem;
 }
