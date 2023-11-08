@@ -1,7 +1,9 @@
 ## About
 
+Portfolio.
 Tech and everyday life blog.
 
-## process
+
+## status
 
 Now building.
