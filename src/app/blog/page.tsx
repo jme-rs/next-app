@@ -5,11 +5,11 @@ export default function Blog() {
   return (
     <>
       <h1>Blog</h1>
-      <InternalLinkContainer>
+      {/* <InternalLinkContainer>
         <InternalLinkCard
           href="/blog/rust"
         />
-      </InternalLinkContainer>
+      </InternalLinkContainer> */}
     </>
   )
 }
