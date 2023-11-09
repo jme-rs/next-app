@@ -15,12 +15,13 @@ export default async function Page() {
           href="/experimental/unified-markdown"
           title="unified, remark, rehype を利用したマークダウンの表示"
           tags={["jsx"]}
-          date="2023-10-28"
+          post="2023-10-28"
+          update="2023-11-09"
         />
         <InternalLinkCard
           href="/experimental/article-header"
           title="記事のヘッダー"
-          date="2023-10-27"
+          post="2023-10-27"
         />
         <InternalLinkCard
           href="/experimental/externalLink"
@@ -29,10 +30,6 @@ export default async function Page() {
         <InternalLinkCard
           href="/experimental/zenn-markdown"
           title="zenn-markdown"
-        />
-        <InternalLinkCard
-          href="/experimental/react-markdown"
-          title="react-markdown"
         />
         <InternalLinkCard
           href="/experimental/syntaxHighlight"

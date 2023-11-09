@@ -86,25 +86,10 @@
 
     .dateContainer {
       display: flex;
-      flex-direction: row;
       position: relative;
       align-items: center;
       justify-content: right;
 
-      .icon {
-        width: 0.8rem;
-        height: 0.8rem;
-        color: var(--light-text-color);
-        margin-right: 0.1rem;
-      }
-
-      .date {
-        height: 1rem;
-        font-size: 0.7rem;
-        display: flex;
-        align-items: center;
-        color: gray;
-      }
     }
   }
 }
@@ -112,7 +97,7 @@
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   row-gap: 2rem;
   width: 100%;
   justify-content: center;

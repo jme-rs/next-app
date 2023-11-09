@@ -27,24 +27,10 @@
   }
 
   .date {
-    color: var(--light-text-color);
-    // margin-bottom: 0.5rem;
     display: flex;
-    flex-direction: row;
     position: relative;
     align-items: center;
     justify-content: right;
-
-    .icon {
-      margin-right: 0.1rem;
-      width: 0.8rem;
-      height: 0.8rem;
-    }
-
-    .text {
-      text-align: center;
-      font-size: 0.7rem;
-    }
   }
 
   .tagContainer {

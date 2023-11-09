@@ -1,7 +1,7 @@
 ---
 title: Markdown Test
 description: This header has created from markdown.
-date: 2000-01-01
+post: 2000-01-01
 tags: [next.js, dev]
 ---
 

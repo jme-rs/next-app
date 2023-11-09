@@ -10,7 +10,7 @@ export default function Page() {
         zenn-markdown を使用。
       </p>
 
-      <M2H markdown={getLocalFile("src/assets/articles/test.mdx")} />
+      <M2H markdown={getLocalFile("src/assets/posts/test/test.md")} />
     </>
   )
 }

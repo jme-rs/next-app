@@ -70,7 +70,7 @@ const processor = unified()
     yaml: yaml.parse,
     name: 'frontMatter'
   })
-  // .use(remarkBreaks)
+  .use(remarkBreaks)
   .use(remarkGfm)
   .use(remarkMdx)
   .use(remarkRehype)

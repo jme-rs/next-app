@@ -1,28 +1,24 @@
 import styles from "./article-header.module.scss"
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Tag } from "./tag";
+import Date from "./date";
+import { PostMetadata } from "@/types/post"
 
-export default function ArticleHeader({
-  title, description, tags, date,
-}: {
-  title: string, description?: string, tags?: string[], date?: string,
-}) {
+export default function ArticleHeader(props: PostMetadata) {
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.description}>{description}</div>
+        <div className={styles.title}>{props.title}</div>
+        <div className={styles.description}>{props.description}</div>
         <div className={styles.tagContainer}>
-          <Tag tags={tags} />
+          <Tag tags={props.tags} />
         </div>
-        {date &&
-          <div className={styles.date}>
-            <AccessTimeIcon className={styles.icon} />
-            <div className={styles.text}>{date}</div>
-          </div>
-        }
+        <div className={styles.date}>
+          <Date
+            post={props.post}
+            update={props.update}
+          />
+        </div>
       </div>
-      {/* <div className={styles.devbar} /> */}
     </>
   )
 }

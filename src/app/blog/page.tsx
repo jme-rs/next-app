@@ -1,13 +1,13 @@
 import { InternalLinkCard, InternalLinkContainer }
   from "@/components/internal-link";
 
-export default function Home() {
+export default function Blog() {
   return (
     <>
       <h1>Blog</h1>
       <InternalLinkContainer>
         <InternalLinkCard
-          href="/blog"
+          href="/blog/rust"
         />
       </InternalLinkContainer>
     </>

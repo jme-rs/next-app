@@ -32,7 +32,7 @@ export default async function CodeBlock({
         return `<code class="${styles.code}">${children}</code>`
       }
     }
-  }) 
+  })
 
   return (
     <div className={styles.container}>
