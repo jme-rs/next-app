@@ -4,7 +4,7 @@ import { getPosts } from "@/utils/post";
 
 export default function Page() {
 
-  const posts = getPosts("src/assets/posts/[0-9]*/*.md");
+  const posts = getPosts("src/assets/posts/**/*.md");
 
   return (
     <>
