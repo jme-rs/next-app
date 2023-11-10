@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export default function Page({ params }: { params: {id: string} }) {
   const post = posts.find((post) => post.id === params.id) as Post;
-  console.log(post);
+  console.log("blog/[id]/page.tsx", post);
 
   return (
     <>
