@@ -3,8 +3,8 @@ import { InternalLinkCard, InternalLinkContainer }
 import { getPosts } from "@/utils/post";
 
 export default function Page() {
-
   const posts = getPosts("src/assets/posts/**/*.md");
+  console.log(posts);
 
   return (
     <>
