@@ -6,7 +6,7 @@ import { unified } from 'unified';
 import remarkMdx from 'remark-mdx'
 import rehypeReact from "rehype-react";
 import remarkFrontmatter from "remark-frontmatter";
-import CodeBlock from './code-block';
+import CodeBlock from '../components/code-block';
 import remarkBreaks from "remark-breaks";
 import { inspect } from "unist-util-inspect";
 import * as prod from "react/jsx-runtime";
@@ -17,7 +17,7 @@ import rehypeToc from "rehype-toc";
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
-import { LinkCard } from './link-card';
+import { LinkCard } from '../components/link-card';
 
 //
 // extensions

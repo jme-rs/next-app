@@ -1,6 +1,6 @@
 import ArticleHeader from './article-header';
 import { getLocalFile } from '@/utils/fetch';
-import processor from './unified-markdown';
+import processor from '../utils/mdProcessor';
 import { PostMetadata} from '@/types/post';
 
 export default function Article({ srcPath }: { srcPath: string }) {

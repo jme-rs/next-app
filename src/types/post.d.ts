@@ -5,3 +5,9 @@ export type PostMetadata = {
   post?: string;
   update?: string;
 }
+
+export type Post = {
+  id: string;
+  metadata: PostMetadata;
+  content: JSX.Element;
+}
