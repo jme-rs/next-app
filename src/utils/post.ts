@@ -2,6 +2,7 @@ import { glob } from "glob";
 import processor from "./mdProcessor";
 import { Post, PostMetadata } from "@/types/post";
 import { getLocalFile } from "./fetch";
+import path from "path";
 
 
 function getPostPaths(postsPath: string): string[] {
@@ -16,8 +17,7 @@ export function getPosts(mdDir: string): Post[] {
   const filePaths = getPostPaths(mdDir);
 
   filePaths.forEach((filePath) => {
-    const filePathSplit = filePath.split("\\");
-    const id = filePathSplit[filePathSplit.length - 1].split(".")[0];
+    const id = path.parse(filePath).name;
     const md = getLocalFile(filePath);
     const processed = processor.processSync(md);
     const content = processed.result;
