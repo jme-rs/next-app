@@ -3,7 +3,6 @@ import processor from "./mdProcessor";
 import { Post, PostMetadata } from "@/types/post";
 import { getLocalFile } from "./fetch";
 
-let postsCache: Post[];
 
 function getPostPaths(postsPath: string): string[] {
   const postsPaths = glob.sync(postsPath);
@@ -11,10 +10,6 @@ function getPostPaths(postsPath: string): string[] {
 }
 
 function getPosts(mdDir: string): Post[] {
-
-  if (postsCache) {
-    return postsCache;
-  }
 
   const posts: Post[] = [];
   const filePaths = getPostPaths(mdDir);
@@ -35,7 +30,6 @@ function getPosts(mdDir: string): Post[] {
   });
 
   console.log("markdown build");
-  postsCache = posts;
   return posts;
 }
 
