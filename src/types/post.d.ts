@@ -4,7 +4,7 @@ export type PostMetadata = {
   tags?: string[];
   post?: string;
   update?: string;
-}
+};
 
 export type Post = {
   id: string;

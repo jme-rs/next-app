@@ -51,7 +51,7 @@ function tableWrapper() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === "table") {
-        const wrapper = parseSelector("div");
+        const wrapper = parseSelector("div") as any;
         wrapper.children = [node];
         wrapper.properties.className = "table-wrapper";
         parent.children[index as number] = wrapper;
