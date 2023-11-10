@@ -9,7 +9,7 @@ function getPostPaths(postsPath: string): string[] {
   return postsPaths;
 }
 
-function getPosts(mdDir: string): Post[] {
+export function getPosts(mdDir: string): Post[] {
 
   const posts: Post[] = [];
   const filePaths = getPostPaths(mdDir);
@@ -32,5 +32,3 @@ function getPosts(mdDir: string): Post[] {
   console.log("markdown build");
   return posts;
 }
-
-export const posts = getPosts("src/assets/posts/[0-9]*/*.md");

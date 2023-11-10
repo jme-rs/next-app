@@ -1,8 +1,11 @@
 import { InternalLinkCard, InternalLinkContainer }
   from "@/components/internal-link";
-import { posts } from "@/utils/post";
+import { getPosts } from "@/utils/post";
 
 export default function Page() {
+
+  const posts = getPosts("src/assets/posts/[0-9]*/*.md");
+
   return (
     <>
       <h1>Blog</h1>
