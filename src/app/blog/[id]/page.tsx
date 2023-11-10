@@ -3,7 +3,7 @@ import { Post } from "@/types/post";
 import ArticleHeader from "@/components/article-header";
 
 const posts = getPosts("src/assets/posts/[1-9]*/*.md");
-
+ 
 export function generateStaticParams() {
   return posts.map((post) => ({
     id: post.id,

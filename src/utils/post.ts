@@ -7,7 +7,6 @@ import path from "path";
 
 function getPostPaths(postsPath: string): string[] {
   const postsPaths = glob.sync(postsPath);
-  console.log("getPostPaths", postsPaths);
   return postsPaths;
 }
 
