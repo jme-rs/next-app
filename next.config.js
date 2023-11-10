@@ -2,7 +2,7 @@
 
 const nextConfig = {
   output: "export",
-  experimental: { esmExternals: "loose" },
+  // experimental: { esmExternals: "loose" },
 }
 
 module.exports = nextConfig;

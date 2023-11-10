@@ -11,8 +11,8 @@ export function generateStaticParams() {
 }
 
 export default function Page({ params }: { params: {id: string} }) {
-  console.log(posts);
   const post = posts.find((post) => post.id === params.id) as Post;
+  console.log(post);
 
   return (
     <>
