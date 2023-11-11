@@ -3,12 +3,12 @@ import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
-import remarkMdx from 'remark-mdx'
+// import remarkMdx from 'remark-mdx'
 import rehypeReact from "rehype-react";
 import remarkFrontmatter from "remark-frontmatter";
 import CodeBlock from '../components/code-block';
 import remarkBreaks from "remark-breaks";
-import { inspect } from "unist-util-inspect";
+// import { inspect } from "unist-util-inspect";
 import * as prod from "react/jsx-runtime";
 import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
@@ -72,7 +72,7 @@ const processor = unified()
   })
   .use(remarkBreaks)
   .use(remarkGfm)
-  .use(remarkMdx)
+  // .use(remarkMdx)
   .use(remarkRehype)
   .use(extractCodeBlock)
   .use(rehypeReact, {

@@ -1,23 +1,2 @@
-$light: (
-  primary: #004581,
-  secondary: #d8e8ff,
-  border: #eee,
-
-  text: black,
-  background: #fffaf2,
-);
-
-$dark: (
-  primary: #004581,
-  secondary: #d8e8ff,
-  border: #eee,
-
-  text: #eee,
-  background: #333,
-);
-
-$breakpoints: (
-  mobile: 0px,
-  tablet: 768px,
-  desktop: 1024px,
-);
+$mobile: 500px;
+$tablet: 800px;
