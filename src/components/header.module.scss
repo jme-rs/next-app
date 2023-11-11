@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 3rem;
+  height: 48px;
   color: var(--text-color);
   background-color: var(--background-color);
   @include animation();
@@ -19,12 +19,12 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-  padding: 0.2rem;
+  height: 40px;
+  width: 40px;
+  padding: 4px;
   @include hover();
-  border-radius: 0.3rem;
-  margin: 0.25rem;
+  border-radius: 8px;
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,12 +40,12 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-  padding: 0.2rem;
+  height: 40px;
+  width: 40px;
+  padding: 4px;
   @include hover();
-  border-radius: 0.3rem;
-  margin: 0.25rem;
+  border-radius: 8px;
+  margin: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,23 +60,23 @@
 }
 
 .title {
-  font-size: 1.5rem;
-  margin-left: 2rem;
+  font-size: 24px;
+  margin-left: 32px;
   font-weight: bold;
 }
 
 .sidebar {
   position: fixed;
-  top: 4rem;
+  top: 64px;
   left: 0;
   z-index: 90;
   height: 100vh;
-  width: 15rem;
+  width: 240px;
   transform: translateX(-100%);
   overflow-y: auto;
   // padding-left: 1rem;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   color: var(--text-color);
   background-color: var(--background-color);
   @include animation();
@@ -111,14 +111,14 @@
 
 .linkItem {
   color: var(--text-color);
-  font-size: 1.3rem;
-  padding-left: 3rem;
+  font-size: 21px;
+  padding-left: 48px;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 48px;
   @include hover();
   @include removeTextDecoration();
-  border-radius: 0.5rem;
-  margin: 0.5rem;
+  border-radius: 8px;
+  margin: 8px;
   @include animation();
 }

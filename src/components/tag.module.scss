@@ -3,9 +3,9 @@
 .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
 
   .icon {
+    margin-top: 0.2rem;
     margin-right: 0.5rem;
     width: 1.3rem;
     height: 1.3rem;
@@ -16,6 +16,7 @@
   .tagContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     .tag {
       margin-right: 0.5rem;
@@ -25,6 +26,7 @@
       @include animation();
       background-color: var(--tag-color);
       color: white;
+      margin-bottom: 0.5rem;
     }
   }
 }

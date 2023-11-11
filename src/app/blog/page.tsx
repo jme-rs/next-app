@@ -1,5 +1,5 @@
-import { InternalLinkCard, InternalLinkContainer }
-  from "@/components/internal-link";
+import { PostCard, PostCardContainer }
+  from "@/components/post-card";
 import { getPosts } from "@/utils/post";
 
 export default function Page() {
@@ -9,15 +9,15 @@ export default function Page() {
     <>
       <h1>Blog</h1>
 
-      <InternalLinkContainer>
+      <PostCardContainer>
         {posts.map((post, index) => (
-          <InternalLinkCard
+          <PostCard
             key={index}
             href={`/blog/${post.id}`}
             {...post.metadata}
           />
         ))}
-      </InternalLinkContainer>
+      </PostCardContainer>
     </>
   )
 }
