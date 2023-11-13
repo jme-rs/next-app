@@ -16,7 +16,6 @@ export default function BackLink() {
       {fragments.length != 2 &&
         <div className={styles.container}>
           <Link href={backPath} className={styles.link}>
-            {/* <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} /> */}
             <NavigateBeforeIcon className={styles.icon} />
             <div className={styles.text}>{backPath}</div>
           </Link>

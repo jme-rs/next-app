@@ -1,7 +1,7 @@
 import { glob } from "glob";
-import processor from "./mdProcessor";
+import processor from "./md-processor";
 import { Post, PostMetadata } from "@/types/post";
-import { getLocalFile } from "./fetch";
+import { getLocalFile } from "./file";
 import path from "path";
 
 

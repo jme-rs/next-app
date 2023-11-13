@@ -1,10 +1,22 @@
-"use client";
-import dynamic from 'next/dynamic';
-const Embed = dynamic(() => import('react-embed'), { ssr: false })
+import YouTubeEmbed from "./embed/youtube";
 
-export function LinkCard({ href }: { href: string }) {
+function matchCompotent(url: string): React.ReactNode {
+  const hostName = new URL(url).hostname;
+  switch (hostName) {
+    case "twitter.com":
+      return <></>
+    case "www.youtube.com":
+      return <></>
+    default:
+      return <></>
+  }
+}
+
+export default function LinkCard({ href }: { href: string }) {
 
   return (
-    <Embed url={href} />
+    <>
+      <YouTubeEmbed url={href} />
+    </>
   )
 }

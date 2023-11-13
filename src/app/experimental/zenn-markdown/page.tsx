@@ -1,5 +1,5 @@
 import M2H from "@/components/zenn-markdown";
-import { getLocalFile } from "@/utils/fetch";
+import { getLocalFile } from "@/utils/file";
 
 export default function Page() {
   return (

@@ -1,4 +1,5 @@
-import { LinkCard } from "@/components/link-card";
+import LinkCard from "@/components/link-card";
+
 
 export default function Page() {
   return (

@@ -5,7 +5,7 @@ import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import Cookies from "js-cookie";
+import CloseIcon from '@mui/icons-material/Close';
 
 export function Header() {
 
@@ -25,7 +25,6 @@ export function Header() {
   useEffect(() => {
     document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
     console.log("dark mode: " + isDarkMode);
-    Cookies.set("darkMode", isDarkMode ? "true" : "false", { expires: 3 });
   }, [isDarkMode]);
 
 
@@ -68,10 +67,9 @@ export function Header() {
 
   // for PWA
   const pwaMeta = (
-    isDarkMode ?
-      <meta name="theme-color" content="#222222" />
-      :
-      <meta name="theme-color" content="#ffffff" />
+    isDarkMode
+    ? <meta name="theme-color" content="#222222" />
+    : <meta name="theme-color" content="#ffffff" />
   );
 
 
@@ -80,8 +78,10 @@ export function Header() {
       {pwaMeta}
       <header className={styles.container}>
         <button className={styles.menuButton} onClick={toggleSidebar}>
-          {/* <FontAwesomeIcon icon={faBars} className={styles.color} /> */}
-          <MenuIcon className={styles.color} />
+          { isSidebarOpen
+            ? <CloseIcon className={styles.color} />
+            : <MenuIcon className={styles.color} />
+          }
         </button>
         <div className={styles.title}>jme Blog</div>
         <button className={styles.themeButton} onClick={toggleDarkMode}>

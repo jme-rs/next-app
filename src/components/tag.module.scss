@@ -7,8 +7,8 @@
   .icon {
     margin-top: 0.2rem;
     margin-right: 0.5rem;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
     animation: color 0.3s ease;
     color: var(--tag-color);
   }
@@ -27,6 +27,7 @@
       background-color: var(--tag-color);
       color: white;
       margin-bottom: 0.5rem;
+      font-size: 0.9rem;
     }
   }
 }

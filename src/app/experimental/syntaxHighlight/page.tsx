@@ -1,5 +1,5 @@
 import SyntaxHighlight from "@/components/code-block";
-import { getCodeFromGithub, getLocalFile } from "@/utils/fetch";
+import { getLocalFile } from "@/utils/file";
 
 export default async function Page() {
   return (
