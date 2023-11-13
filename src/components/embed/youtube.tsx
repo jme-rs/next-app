@@ -13,10 +13,13 @@ export default function YouTubeEmbed({ url }: { url: string }) {
   console.log(videoId);
 
   return (
-    <YouTube
-      videoId="wdUS9LoKV_8"
-      opts={{width: "100%", }}
-      id="youtube-embed"
-    />
+    <div style={{ width: "100%", aspectRatio: "16 / 9" }}>
+      <YouTube
+        videoId="wdUS9LoKV_8"
+        opts={{ width: "100%" }}
+        id="youtube-embed"
+        style={{ width: "100%" }}
+      />
+    </div>
   )
 }

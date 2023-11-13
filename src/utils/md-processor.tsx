@@ -17,7 +17,7 @@ import rehypeToc from "rehype-toc";
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
-import { LinkCard } from '../components/link-card';
+import LinkCard from '../components/link-card';
 
 //
 // extensions
