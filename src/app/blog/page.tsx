@@ -1,3 +1,4 @@
+import PageHeader from "@/components/page-header";
 import { PostCard, PostCardContainer }
   from "@/components/post-card";
 import { getPosts } from "@/utils/post";
@@ -7,7 +8,10 @@ export default function Page() {
 
   return (
     <>
-      <h1>Blog</h1>
+      <PageHeader
+        title="Blog Posts"
+        description="A collection of blog posts."
+      />
 
       <PostCardContainer>
         {posts.map((post, index) => (

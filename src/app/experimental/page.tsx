@@ -4,7 +4,7 @@ import PageHeader from "@/components/page-header";
 
 export default async function Page() {
   return (
-    <>
+    <> 
       <PageHeader
         title="⚠️Experimental"
         description="実験的なコンポーネント置き場"
@@ -22,7 +22,7 @@ export default async function Page() {
           href="/experimental/article-header"
           title="記事のヘッダー"
           post="2023-10-27"
-        /> 
+        />
         <PostCard
           href="/experimental/externalLink"
           title="外部リンク"
