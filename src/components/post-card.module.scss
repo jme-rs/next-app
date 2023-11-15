@@ -56,38 +56,31 @@
   .text {
     padding: 1rem;
     padding-top: 0.5rem;
+  }
 
-    .title {
-      height: 3.2rem;
-      font-size: 1.1rem;
-      margin: 0;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      color: var(--text-color);
-      @include animation();
-    }
+  .dateContainer {
+  }
 
-    .tagContainer {
-      display: flex;
-      position: relative;
-      align-items: flex-end;
-      color: var(--text-color);
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      height: 4rem;
-      // @include animation();
-      @include removeTextDecoration();
-    }
+  .title {
+    height: 3.2rem;
+    font-size: 1.1rem;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--text-color);
+    @include animation();
+  }
 
-    .dateContainer {
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: right;
-
-    }
+  .tagContainer {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    color: var(--text-color);
+    height: 4rem;
+    // @include animation();
+    @include removeTextDecoration();
   }
 }
 
