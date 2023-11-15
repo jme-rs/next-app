@@ -1,4 +1,3 @@
-// "use client";
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -76,7 +75,7 @@ const processor = unified()
   .use(remarkRehype)
   .use(extractCodeBlock)
   .use(rehypeReact, {
-    ...prod,
+    ...prod, 
     components: {
       pre: (props: any) => {
         var lang: string | undefined;

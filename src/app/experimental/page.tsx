@@ -14,7 +14,7 @@ export default async function Page() {
         <PostCard
           href="/experimental/unified-markdown"
           title="unified, remark, rehype を利用したマークダウンの表示"
-          tags={["jsx"]}
+          tags={["jsx", "unified", "remark", "rehype", "Tech"]}
           post="2023-10-28"
           update="2023-11-09"
         />

@@ -1,6 +1,3 @@
-// "use client"
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import styles from "./code-block.module.scss";
 import shiki from "shiki";
 
@@ -14,10 +11,7 @@ export default async function CodeBlock({
   fileName?: string,
 }) {
 
-  // const highlighter = await shiki.getHighlighter({
-  //   theme: "dark-plus",
-  // });
-  // var htmlString = highlighter.codeToHtml(code, { lang: "js" });
+  console.log("CodeBlock", lang, fileName);
 
   const highlighter = await shiki.getHighlighter({ theme: "dark-plus" });
   const tokens = highlighter.codeToThemedTokens(children, lang);
@@ -43,14 +37,6 @@ export default async function CodeBlock({
         className={`${styles.codeFrame} ${fileName ? styles.withFilename : ""}`}
         dangerouslySetInnerHTML={{ __html: htmlString }}
       >
-        {/* <SyntaxHighlighter
-          language={lang}
-          style={vs2015}
-          codeTagProps={{ style: { fontFamily: "Consolas", fontSize: "0.9rem" } }}
-          customStyle={{ padding: "1.2rem 0.9rem" }}
-        >
-          {children}
-        </SyntaxHighlighter> */}
       </div>
     </div>
   );
