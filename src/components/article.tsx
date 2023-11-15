@@ -17,4 +17,4 @@ export default function Article({ srcPath }: { srcPath: string }) {
       {content.result}
     </>
   )
-}
+}  
