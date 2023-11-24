@@ -16,17 +16,17 @@ export function PostCard(props: PostMetadata & { href: string, imgPath?: string 
           }
         </div>
         <div className={styles.text}>
-          <div className={styles.dateContainer}>
-            <Date
-              post={props.post}
-              update={props.update}
-            />
-          </div>
           <div className={styles.title}>
             {props.title}
           </div>
           <div className={styles.tagContainer}>
             <Tag tags={props.tags} />
+          </div>
+          <div className={styles.dateContainer}>
+            <Date
+              post={props.post}
+              update={props.update}
+            />
           </div>
         </div>
       </Link>

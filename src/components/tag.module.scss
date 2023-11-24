@@ -20,14 +20,16 @@
 
     .tag {
       margin-right: 0.5rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.5rem;
-      color: var(--text-color);
+      margin-top: 0.5rem;
+      padding: 0 0.5rem;
+      color: white;
       @include animation();
       background-color: var(--tag-color);
-      color: white;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
+      border-radius: 0.7rem;
+      font-size: 0.8rem;
+      height: 1.4rem;
+      display: flex;
+      align-items: center;
     }
   }
 }

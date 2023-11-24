@@ -19,17 +19,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
-  padding: 4px;
+  height: 48px;
+  width: 48px;
+  padding: 8px;
   @include hover();
-  border-radius: 8px;
-  margin: 5px;
+  // border-radius: 8px;
+  // margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .color {
+  .icon {
     color: var(--primary-color);
     width: 100%;
     height: 100%;
@@ -40,12 +40,12 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
-  padding: 4px;
+  height: 48px;
+  width: 48px;
+  padding: 8px;
   @include hover();
-  border-radius: 8px;
-  margin: 4px;
+  // border-radius: 8px;
+  // margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@
 
 .sidebar {
   position: fixed;
-  top: 64px;
+  top: 48px;
   left: 0;
   z-index: 90;
   height: 100vh;
@@ -75,11 +75,12 @@
   transform: translateX(-100%);
   overflow-y: auto;
   // padding-left: 1rem;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  // border-top-right-radius: 16px;
+  // border-bottom-right-radius: 16px;
   color: var(--text-color);
   background-color: var(--background-color);
-  @include animation();
+  // @include animation();
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 
   &.open {
     transform: translateX(0);
@@ -111,14 +112,14 @@
 
 .linkItem {
   color: var(--text-color);
-  font-size: 21px;
+  font-size: 20px;
   padding-left: 48px;
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 52px;
   @include hover();
   @include removeTextDecoration();
-  border-radius: 8px;
-  margin: 8px;
+  // border-radius: 8px;
+  // margin: 8px;
   @include animation();
 }

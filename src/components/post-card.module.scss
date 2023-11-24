@@ -5,61 +5,63 @@
   overflow: hidden;
   border-radius: 1rem;
   @include hover();
-  // background-color: white;
+  background-color: var(--background-color);
   @include removeTextDecoration();
   transition: 0.3s;
 
   @media (hover: hover) {
-    :hover {
-      .inner {
-        text-decoration: underline var(--text-color);
-        -webkit-text-decoration: underline var(--text-color);
-      }
+    // :hover {
+    //   .inner {
+    //     text-decoration: underline var(--text-color);
+    //     -webkit-text-decoration: underline var(--text-color);
+    //   }
 
-      .date {
-        text-decoration: underline gray;
-      }
+    //   .date {
+    //     text-decoration: underline gray;
+    //   }
 
-      .tagContainer {
-        text-decoration: underline var(--tag-color);
-      }
-    }
+    //   .tagContainer {
+    //     text-decoration: underline var(--tag-color);
+    //   }
+    // }
 
-    &:hover {
-      transform: scale(0.97, 0.97);
-    }
+    // &:hover {
+    //   transform: scale(0.99, 0.99);
+    // }
   }
 
   @media (hover: none) {
-    :active {
-      .inner {
-        text-decoration: underline var(--text-color);
-        -webkit-text-decoration: underline var(--text-color);
-      }
+    // :active {
+    //   .inner {
+    //     text-decoration: underline var(--text-color);
+    //     -webkit-text-decoration: underline var(--text-color);
+    //   }
 
-      .date {
-        text-decoration: underline gray;
-      }
+    //   .date {
+    //     text-decoration: underline gray;
+    //   }
 
-      .tagContainer {
-        text-decoration: underline var(--tag-color);
-        -webkit-text-decoration: underline var(--tag-color);
-      }
-    }
+    //   .tagContainer {
+    //     text-decoration: underline var(--tag-color);
+    //     -webkit-text-decoration: underline var(--tag-color);
+    //   }
+    // }
 
-    &:active {
-      transform: scale(0.97, 0.97);
-    }
+    // &:active {
+    //   transform: scale(0.99, 0.99);
+    // }
   }
 
   .image {
-    height: 9rem;
+    height: 12rem;
     background-color: rgba(149, 202, 255, 0.232);
     overflow: hidden;
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
   }
 
   .text {
@@ -68,6 +70,11 @@
   }
 
   .dateContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 0.5rem;
   }
 
   .title {
@@ -97,7 +104,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
   gap: 2rem;
-  row-gap: 2rem;
   width: 100%;
   justify-content: center;
   margin: 1.3rem 0;

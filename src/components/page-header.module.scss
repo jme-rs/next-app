@@ -3,12 +3,12 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  // background-color: var(--secondary-color);
+  background-color: var(--background-color);
   border-radius: 1rem;
   padding: 2rem;
   padding-bottom: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin: 2rem 0;
+  @include animation();
 
   .title {
     max-width: 100%;
@@ -16,6 +16,7 @@
     text-align: center;
     font-weight: 600;
     margin-bottom: 1rem;
+    transition: color 0.001s ease;
   }
 
   .description {
@@ -24,10 +25,4 @@
     color: var(--light-text-color);
     margin-bottom: 1rem;
   }
-}
-
-.devbar {
-  // background-color: var(--border-color);
-  height: 1px;
-  @include animation();
 }

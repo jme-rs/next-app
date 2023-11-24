@@ -11,8 +11,6 @@ export default async function CodeBlock({
   fileName?: string,
 }) {
 
-  console.log("CodeBlock", lang, fileName);
-
   const highlighter = await shiki.getHighlighter({ theme: "dark-plus" });
   const tokens = highlighter.codeToThemedTokens(children, lang);
   const htmlString = shiki.renderToHtml(tokens, {

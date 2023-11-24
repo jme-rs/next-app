@@ -6,7 +6,7 @@ import { getPosts } from "@/utils/post";
 export default function Page() {
   const posts = getPosts("src/assets/posts/[1-9]*/*.md");
 
-  return ( 
+  return (
     <>
       <PageHeader
         title="Blog Posts"

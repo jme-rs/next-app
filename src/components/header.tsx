@@ -68,8 +68,8 @@ export function Header() {
   // for PWA
   const pwaMeta = (
     isDarkMode
-    ? <meta name="theme-color" content="#222222" />
-    : <meta name="theme-color" content="#ffffff" />
+      ? <meta name="theme-color" content="#222222" />
+      : <meta name="theme-color" content="#ffffff" />
   );
 
 
@@ -78,17 +78,16 @@ export function Header() {
       {pwaMeta}
       <header className={styles.container}>
         <button className={styles.menuButton} onClick={toggleSidebar}>
-          { isSidebarOpen
-            ? <CloseIcon className={styles.color} />
-            : <MenuIcon className={styles.color} />
+          {isSidebarOpen
+            ? <CloseIcon className={styles.icon} />
+            : <MenuIcon className={styles.icon} />
           }
         </button>
         <div className={styles.title}>jme Blog</div>
         <button className={styles.themeButton} onClick={toggleDarkMode}>
-          {isDarkMode ?
-            <DarkModeOutlinedIcon className={styles.mode} />
-            :
-            <LightModeOutlinedIcon className={styles.mode} />
+          {isDarkMode
+            ? <DarkModeOutlinedIcon className={styles.mode} />
+            : <LightModeOutlinedIcon className={styles.mode} />
           }
         </button>
       </header>

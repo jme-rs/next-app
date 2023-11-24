@@ -46,9 +46,9 @@ body {
   scroll-padding-top: 64px;
   font-size: 16px;
 
-  @media (max-width: $mobile) {
-    font-size: 15px;
-  }
+  // @media (max-width: $mobile) {
+  //   font-size: 15px;
+  // }
 
   --light-text-color: gray;
 
@@ -57,7 +57,8 @@ body {
     --secondary-color: #e6f1ff;
     --border-color: #ddd;
     --text-color: black;
-    --background-color: rgb(255, 255, 255);
+    --background-color: #fff;
+    --body-background-color: #eee;
     --tag-color: #399681;
     --backquote-color: #555;
   }
@@ -68,12 +69,13 @@ body {
     --border-color: #404040;
     --text-color: #eee;
     --background-color: #222;
+    --body-background-color: #111;
     --tag-color: #2c7564;
     --backquote-color: #bbb;
   }
 
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--body-background-color);
   @include animation();
 }
 
@@ -101,11 +103,6 @@ main {
   }
 }
 
-p {
-  margin: 2rem 0;
-  line-height: 1.8rem;
-}
-
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -125,6 +122,17 @@ a {
       text-decoration: underline;
     }
   }
+}
+
+.md {
+  margin: 2rem 0;
+  background-color: var(--background-color);
+  border-radius: 1rem;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.8rem;
 }
 
 // h1,

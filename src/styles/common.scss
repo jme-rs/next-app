@@ -32,11 +32,12 @@
 }
 
 @mixin animation {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 @mixin responsive {
   font-size: 16px;
+
   @media (max-width: $mobile) {
     font-size: 15px;
   }
