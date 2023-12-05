@@ -1,12 +1,11 @@
 import Article from "@/components/article";
+import { getPosts } from "@/utils/post";
 
 export default function Page() {
+  const posts = getPosts("src/assets/posts/test/test.md");
   return (
     <>
-      <Article
-        srcPath="/src/assets/posts/test/test.md"
-        // srcPath="/src/assets/posts/20231108/20231108.md"
-      />
+      <Article {...posts[0]} />
     </>
   )
 }

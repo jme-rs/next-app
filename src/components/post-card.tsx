@@ -12,7 +12,7 @@ export function PostCard(props: PostMetadata & { href: string, imgPath?: string 
         <div className={styles.image}>
           {props.imgPath
             ? <Image src={props.imgPath} alt="thumbnail" />
-            : <Image src={"/images/next.svg"} alt="thumbnail" priority width="320" height="160" />
+            : <Image src={"/images/next.svg"} alt="thumbnail" width="320" height="160" />
           }
         </div>
         <div className={styles.text}>

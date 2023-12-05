@@ -17,6 +17,7 @@ import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
 import LinkCard from '../components/link-card';
+import MdImg from '@/components/md-img';
 
 //
 // extensions
@@ -36,15 +37,17 @@ function extractCodeBlock() {
   };
 }
 
+
 function chanegeFootnoteName() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === "h2" && node.properties.id === "footnote-label") {
-        node.children[0].value = "参考文献";
+        node.children[0].value = "脚注";
       }
     });
   };
 }
+
 
 function tableWrapper() {
   return (tree: any) => {
@@ -58,6 +61,18 @@ function tableWrapper() {
     });
   };
 }
+
+
+function nextImage() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === "img") {
+
+      }
+    });
+  };
+}
+
 
 //
 // processor
@@ -75,7 +90,7 @@ const processor = unified()
   .use(remarkRehype)
   .use(extractCodeBlock)
   .use(rehypeReact, {
-    ...prod, 
+    ...prod,
     components: {
       pre: (props: any) => {
         var lang: string | undefined;
@@ -95,6 +110,14 @@ const processor = unified()
           >
             {props.children}
           </CodeBlock>
+        )
+      },
+      img: ({src, alt}: {src: string, alt: string}) => {
+        return (
+          <MdImg
+            src={src}
+            alt={alt}
+          />
         )
       },
       // a: (props: any) => {

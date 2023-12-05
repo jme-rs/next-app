@@ -2,6 +2,7 @@
 import styles from "./header.module.scss";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+// import Head from "next/head";
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
@@ -66,16 +67,24 @@ export function Header() {
 
 
   // for PWA
-  const pwaMeta = (
-    isDarkMode
-      ? <meta name="theme-color" content="#222222" />
-      : <meta name="theme-color" content="#ffffff" />
-  );
+  // const pwaMeta = (
+  //   isDarkMode
+  //     ? <meta name="theme-color" content="#222222" />
+  //     : <meta name="theme-color" content="#ffffff" />
+  // );
 
 
   return (
     <>
-      {pwaMeta}
+      {/* <Head>
+        {isDarkMode
+          ? <meta name="theme-color" content="#222222" key="light" />
+          : <meta name="theme-color" content="#ffffff" key="dark" />}
+      </Head> */}
+      {isDarkMode
+        ? <meta name="theme-color" content="#222222" />
+        : <meta name="theme-color" content="#ffffff" />
+      }
       <header className={styles.container}>
         <button className={styles.menuButton} onClick={toggleSidebar}>
           {isSidebarOpen

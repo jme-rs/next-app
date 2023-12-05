@@ -45,6 +45,7 @@ body {
   flex-direction: column;
   scroll-padding-top: 64px;
   font-size: 16px;
+  scroll-behavior: smooth;
 
   // @media (max-width: $mobile) {
   //   font-size: 15px;
@@ -194,6 +195,7 @@ li {
 .table-wrapper {
   overflow-x: auto;
   margin: 2rem 0;
+  font-size: 0.9rem;
 
   table {
     border-collapse: collapse;
@@ -219,12 +221,15 @@ code.inline-code-block {
 }
 
 nav.toc {
-  margin: 3rem 0;
+  padding: 1rem;
   padding-left: 2rem;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  margin-top: 1rem;
 
   ol {
     padding-left: 1rem;
-
+ 
     li {
       margin: 0.5rem 0;
     }

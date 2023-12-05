@@ -1,0 +1,18 @@
+@import "/src/styles/variables.scss";
+
+.container {
+  background-color: var(--background-color);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+
+  @media (max-width: $tablet) {
+    padding: 1rem 1rem;
+  }
+
+  @media (max-width: $mobile) {
+    border-radius: 0;
+    position: relative;
+    left: -1rem;
+    width: calc(100% + 2rem);
+  }
+}
