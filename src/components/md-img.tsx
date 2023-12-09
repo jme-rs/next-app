@@ -5,7 +5,7 @@ import path from "path";
 import fs from "fs";
 
 export default function MdImg({ dir, src, alt }: {
-  dir: string,
+  dir: string, 
   src: string,
   alt: string
 }) {

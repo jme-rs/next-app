@@ -13,12 +13,15 @@ export function PostCard(props: PostMetadata & { href: string, imgPath?: string 
       <Link href={props.href} prefetch={false}>
         <div className={styles.imageContainer}>
           {props.imgPath
-            ? <ExportedImage src={props.imgPath} alt="thumbnail" />
-            : <ExportedImage
-              src={"/images/other/tokyo.jpg"}
+            ? <ExportedImage
+              src={props.imgPath}
               alt="thumbnail"
               fill
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            : <ExportedImage
+              src={nextSvgImg}
+              alt="thumbnail"
+              style={{ objectFit: "contain" }}
             />
           }
         </div>
