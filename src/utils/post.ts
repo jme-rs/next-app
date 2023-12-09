@@ -1,5 +1,5 @@
 import { glob } from "glob";
-import processor from "./md-processor";
+import { process } from "./md-processor";
 import { Post, PostMetadata } from "@/types/post";
 import { getLocalFile } from "./file";
 import path from "path";
@@ -28,7 +28,7 @@ function getPostPaths(postsPath: string): string[] {
 }
 
 
-export function getPosts(mdDir: string): Post[] {
+export function getPosts(mdDir: string, toc = true): Post[] {
 
   // const postRef = new GlobalPostRef("posts");
   // if (postRef.value) {
@@ -41,8 +41,12 @@ export function getPosts(mdDir: string): Post[] {
 
   filePaths.forEach((filePath) => {
     const id = path.parse(filePath).name;
+    const dir = path.dirname(filePath);
+    // console.log(filePath);
+    // console.log(dir);
     const md = getLocalFile(filePath);
-    const processed = processor.processSync(md);
+
+    const processed = process(md, dir, toc);
     const content = processed.result;
     const metadata = processed.data.frontMatter as PostMetadata;
 
@@ -50,6 +54,7 @@ export function getPosts(mdDir: string): Post[] {
       id,
       metadata,
       content,
+      // dir,
     });
   });
 

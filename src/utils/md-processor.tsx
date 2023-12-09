@@ -18,6 +18,7 @@ import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
 import LinkCard from '../components/link-card';
 import MdImg from '@/components/md-img';
+// import remarkUnwrapImages from 'remark-unwrap-images';
 
 //
 // extensions
@@ -63,11 +64,40 @@ function tableWrapper() {
 }
 
 
-function nextImage() {
+// function nextImage() {
+//   return (tree: any) => {
+//     visit(tree, 'element', (node, index, parent) => {
+//       if (node.tagName === "img") {
+
+//       }
+//     });
+//   };
+// }
+
+
+function unwrapImage() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
-      if (node.tagName === "img") {
+      if (node.tagName === 'img' && parent.tagName === 'p') {
+        parent.tagName = node.tagName;
+        parent.children = node.children;
+        parent.properties = node.properties;
+      }
+    });
+  };
+}
 
+
+function tocWrapper() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === "nav") {
+        const details = parseSelector("details") as any;
+        const summary = parseSelector("summary") as any;
+        summary.children = [{ type: "text", value: "目次" }];
+        details.children = [summary, node];
+        details.properties.className = "toc-wrapper";
+        parent.children[index as number] = details;
       }
     });
   };
@@ -75,64 +105,72 @@ function nextImage() {
 
 
 //
-// processor
 //
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkFrontmatter)
-  .use(remarkExtractFrontmatter, {
-    yaml: yaml.parse,
-    name: 'frontMatter'
-  })
-  .use(remarkBreaks)
-  .use(remarkGfm)
-  // .use(remarkMdx)
-  .use(remarkRehype)
-  .use(extractCodeBlock)
-  .use(rehypeReact, {
-    ...prod,
-    components: {
-      pre: (props: any) => {
-        var lang: string | undefined;
-        var fileName: string | undefined;
-        const className = props.className?.replace("language-", "").split(":");
-        if (className && className.length === 1) {
-          lang = className[0];
-        }
-        else if (className && className.length === 2) {
-          lang = className[0];
-          fileName = className[1];
-        }
-        return (
-          <CodeBlock
-            lang={lang}
-            fileName={fileName}
-          >
-            {props.children}
-          </CodeBlock>
-        )
+// export process function
+export function process(content: string, dir: string, toc: boolean) {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter)
+    .use(remarkExtractFrontmatter, {
+      yaml: yaml.parse,
+      name: 'frontMatter'
+    })
+    .use(remarkBreaks)
+    .use(remarkGfm)
+    // .use(remarkMdx)
+    .use(remarkRehype)
+    .use(extractCodeBlock)
+    // .use(remarkUnwrapImages)
+    .use(unwrapImage)
+    .use(rehypeReact, {
+      ...prod,
+      components: {
+        pre: (props: any) => {
+          var lang: string | undefined;
+          var fileName: string | undefined;
+          const className = props.className?.replace("language-", "").split(":");
+          if (className && className.length === 1) {
+            lang = className[0];
+          }
+          else if (className && className.length === 2) {
+            lang = className[0];
+            fileName = className[1];
+          }
+          return (
+            <CodeBlock
+              lang={lang}
+              fileName={fileName}
+            >
+              {props.children}
+            </CodeBlock>
+          )
+        },
+        img: ({ src, alt }: { src: string, alt: string }) => {
+          return (
+            <MdImg
+              dir={dir}
+              src={src}
+              alt={alt}
+            />
+          )
+        },
+        // a: (props: any) => {
+        //   return (
+        //     <LinkCard
+        //       href={props.href}
+        //     />
+        //   )
+        // }
       },
-      img: ({src, alt}: {src: string, alt: string}) => {
-        return (
-          <MdImg
-            src={src}
-            alt={alt}
-          />
-        )
-      },
-      // a: (props: any) => {
-      //   return (
-      //     <LinkCard
-      //       href={props.href}
-      //     />
-      //   )
-      // }
-    },
-  } as any)
-  .use(chanegeFootnoteName)
-  .use(tableWrapper)
-  .use(rehypeSlug)
-  .use(rehypeAutolinkHeadings)
-  .use(rehypeToc, { headings: ["h2", "h3"] });
+    } as any)
+    .use(chanegeFootnoteName)
+    .use(tableWrapper)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings);
+  if (toc) {
+    processor.use(rehypeToc, { headings: ["h2", "h3"] })
+      .use(tocWrapper);
+  }
 
-export default processor;
+  return processor.processSync(content);
+}

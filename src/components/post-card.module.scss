@@ -9,50 +9,7 @@
   @include removeTextDecoration();
   transition: 0.3s;
 
-  @media (hover: hover) {
-    // :hover {
-    //   .inner {
-    //     text-decoration: underline var(--text-color);
-    //     -webkit-text-decoration: underline var(--text-color);
-    //   }
-
-    //   .date {
-    //     text-decoration: underline gray;
-    //   }
-
-    //   .tagContainer {
-    //     text-decoration: underline var(--tag-color);
-    //   }
-    // }
-
-    // &:hover {
-    //   transform: scale(0.99, 0.99);
-    // }
-  }
-
-  @media (hover: none) {
-    // :active {
-    //   .inner {
-    //     text-decoration: underline var(--text-color);
-    //     -webkit-text-decoration: underline var(--text-color);
-    //   }
-
-    //   .date {
-    //     text-decoration: underline gray;
-    //   }
-
-    //   .tagContainer {
-    //     text-decoration: underline var(--tag-color);
-    //     -webkit-text-decoration: underline var(--tag-color);
-    //   }
-    // }
-
-    // &:active {
-    //   transform: scale(0.99, 0.99);
-    // }
-  }
-
-  .image {
+  .imageContainer {
     height: 12rem;
     background-color: rgba(149, 202, 255, 0.232);
     overflow: hidden;
@@ -62,6 +19,12 @@
     align-items: center;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+
+    // img {
+    //   width: 100%;
+    //   height: 100%;
+    //   object-fit: cover;
+    // }
   }
 
   .text {
@@ -86,7 +49,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     color: var(--text-color);
-    @include animation();
+    transition: color 0.3s ease;
   }
 
   .tagContainer {
@@ -95,7 +58,6 @@
     align-items: flex-end;
     color: var(--text-color);
     height: 4rem;
-    // @include animation();
     @include removeTextDecoration();
   }
 }

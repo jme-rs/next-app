@@ -1,18 +1,25 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import styles from "./post-card.module.scss";
 import { Tag } from "./tag";
 import Date from "./date";
 import { PostMetadata } from "@/types/post"
+import nextSvgImg from "@/assets/images/next.svg";
 
 export function PostCard(props: PostMetadata & { href: string, imgPath?: string }) {
   return (
     <div className={styles.container}>
       <Link href={props.href} prefetch={false}>
-        <div className={styles.image}>
+        <div className={styles.imageContainer}>
           {props.imgPath
-            ? <Image src={props.imgPath} alt="thumbnail" />
-            : <Image src={"/images/next.svg"} alt="thumbnail" width="320" height="160" />
+            ? <ExportedImage src={props.imgPath} alt="thumbnail" />
+            : <ExportedImage
+              src={"/images/other/tokyo.jpg"}
+              alt="thumbnail"
+              fill
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           }
         </div>
         <div className={styles.text}>

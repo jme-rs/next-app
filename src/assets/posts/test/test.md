@@ -6,7 +6,9 @@ tags: [next.js, dev]
 ---
 
 
-![](/nyancat.png)
+![](nyancat.png)
+
+![](icon-512x512.png)
 
 
 # h1

@@ -36,12 +36,13 @@ export function Header() {
 
 
   // links
-  const links = new Map([
+  const links = [
     ["Home", "/"],
     ["Blog", "/blog"],
-    ["⚠️Exp", "/experimental"],
     ["About", "/about"],
-  ]);
+    ["Changelog", "/changelog"],
+    ["⚠️Exp", "/experimental"],
+  ];
 
 
   // navigation
@@ -49,7 +50,7 @@ export function Header() {
     <nav className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
       <div className={styles.linkContainer}>
         {
-          Array.from(links).map(([name, href]) => (
+          links.map(([name, href]) => (
             <Link
               href={href}
               className={styles.linkItem}

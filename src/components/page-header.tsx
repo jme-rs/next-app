@@ -9,7 +9,9 @@ export default function PageHeader({
     <>
       <div className={styles.mainContainer}>
         <div className={styles.title}>{title}</div>
-        <div className={styles.description}>{description}</div>
+        {description &&
+          <div className={styles.description}>{description}</div>
+        }
       </div>
       {/* <div className={styles.devbar} /> */}
     </>

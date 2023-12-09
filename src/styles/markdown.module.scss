@@ -135,7 +135,7 @@
     margin-left: 0.5rem;
     padding-left: 1rem;
     border-left: 0.3rem solid var(--border-color);
-    @include animation();
+    transition: color 0.3s ease, background-color 0.3s ease;
     color: var(--backquote-color);
 
     ol {

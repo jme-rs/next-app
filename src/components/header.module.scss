@@ -12,7 +12,7 @@
   height: 48px;
   color: var(--text-color);
   background-color: var(--background-color);
-  @include animation();
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .menuButton {
@@ -79,7 +79,6 @@
   // border-bottom-right-radius: 16px;
   color: var(--text-color);
   background-color: var(--background-color);
-  // @include animation();
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 
   &.open {
@@ -95,7 +94,7 @@
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0);
-  @include animation();
+  transition: background-color 0.3s ease;
 
   &.active {
     pointer-events: auto;
@@ -121,5 +120,5 @@
   @include removeTextDecoration();
   // border-radius: 8px;
   // margin: 8px;
-  @include animation();
+  transition: color 0.3s ease, background-color 0.3s ease;
 }

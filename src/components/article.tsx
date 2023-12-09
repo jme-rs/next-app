@@ -1,4 +1,5 @@
 import ArticleHeader from './article-header';
+import Island from './island';
 import { Post } from "@/types/post";
 import styles from './article.module.scss';
 
@@ -9,9 +10,9 @@ export default function Article(post: Post) {
       <ArticleHeader
         {...post.metadata}
       />
-      <div className={styles.container}>
+      <Island>
         {post.content}
-      </div>
+      </ Island>
     </>
   )
-} 
+}
