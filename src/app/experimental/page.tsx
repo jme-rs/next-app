@@ -4,7 +4,7 @@ import PageHeader from "@/components/page-header";
 
 export default async function Page() {
   return (
-    <> 
+    <>
       <PageHeader
         title="⚠️Experimental"
         description="実験的なコンポーネント置き場"
@@ -17,6 +17,7 @@ export default async function Page() {
           tags={["jsx", "unified", "remark", "rehype", "Tech"]}
           post="2023-10-28"
           update="2023-11-09"
+          imgPath="/images/other/tokyo.jpg"
         />
         <PostCard
           href="/experimental/article-header"
