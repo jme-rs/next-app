@@ -23,6 +23,7 @@ export default async function Page() {
           href="/experimental/article-header"
           title="記事のヘッダー"
           post="2023-10-27"
+          imgPath="/images/other/rustacean-orig-noshadow.svg"
         />
         <PostCard
           href="/experimental/externalLink"
