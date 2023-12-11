@@ -289,3 +289,11 @@ ul.contains-task-list {
     list-style-type: none;
   }
 }
+
+ol {
+  padding-left: 2rem;
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
