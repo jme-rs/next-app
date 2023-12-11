@@ -280,3 +280,12 @@ sup {
   position: relative;
   bottom: 1ex;
 }
+
+ul.contains-task-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  li.task-list-item {
+    list-style-type: none;
+  }
+}
