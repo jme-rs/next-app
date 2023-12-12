@@ -1,9 +1,3 @@
-## About
+# jme Blog
 
-Portfolio.
-Tech and everyday life blog.
-
-
-## status
-
-Now building.
+Portfolio and blog built with Next.js.
