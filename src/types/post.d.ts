@@ -4,6 +4,7 @@ export type PostMetadata = {
   tags?: string[];
   post?: string;
   update?: string;
+  thumbnail?: string;
 };
 
 export type Post = {

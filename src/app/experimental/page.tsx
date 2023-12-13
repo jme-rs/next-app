@@ -17,13 +17,13 @@ export default async function Page() {
           tags={["jsx", "unified", "remark", "rehype", "Tech"]}
           post="2023-10-28"
           update="2023-11-09"
-          imgPath="/images/other/tokyo.jpg"
+          thumbnail="/images/thumbnails/tokyo.jpg"
         />
         <PostCard
           href="/experimental/article-header"
           title="記事のヘッダー"
           post="2023-10-27"
-          imgPath="/images/other/rustacean-orig-noshadow.svg"
+          thumbnail="/images/thumbnails/rustacean-orig-noshadow.svg"
         />
         <PostCard
           href="/experimental/externalLink"

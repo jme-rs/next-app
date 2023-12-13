@@ -7,14 +7,14 @@ import Date from "./date";
 import { PostMetadata } from "@/types/post"
 import nextSvgImg from "@/assets/images/next.svg";
 
-export function PostCard(props: PostMetadata & { href: string, imgPath?: string }) {
+export function PostCard(props: PostMetadata & { href: string }) {
   return (
     <div className={styles.container}>
       <Link href={props.href} prefetch={false}>
         <div className={styles.imageContainer}>
-          {props.imgPath
+          {props.thumbnail
             ? <ExportedImage
-              src={props.imgPath}
+              src={props.thumbnail}
               alt="thumbnail"
               fill
             />

@@ -107,7 +107,7 @@ function tocWrapper() {
 //
 //
 // export process function
-export function process(content: string, dir: string, toc: boolean) {
+export function MdProcess(content: string, dir: string, toc: boolean) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
