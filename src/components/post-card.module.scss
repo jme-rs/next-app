@@ -7,7 +7,7 @@
   @include hover();
   background-color: var(--background-color);
   @include removeTextDecoration();
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 
   .imageContainer {
     height: 12rem;
