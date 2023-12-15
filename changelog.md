@@ -5,6 +5,9 @@ title: Changelog
 
 ### v0.1.0
 
+- 2023-12-16
+  - [x] Edit *Home* tab.
+  - [x] Add `todo.md`.
 - 2023-12-13
   - [x] Enable to show thumbnail in *Blog* menu.
 - 2023-12-09

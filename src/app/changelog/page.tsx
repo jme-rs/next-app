@@ -1,17 +1,21 @@
 import PageHeader from "@/components/page-header";
 import Island from "@/components/island";
 import { getPosts } from "@/utils/post";
-import toc from "rehype-toc";
 
 export default function Page() {
-  const md = getPosts("changelog.md", false);
-  const post = md[0];
+  const changelog = getPosts("changelog.md", false);
+  const todo = getPosts("todo.md", false);
 
   return (
     <>
-      <PageHeader title="Changelog" />
       <Island expansion>
-        {post.content}
+        <h2>Todo</h2>
+        {todo[0].content}
+      </Island>
+
+      <Island expansion>
+        <h2>Changelog</h2>
+        {changelog[0].content}
       </Island>
     </>
   )
