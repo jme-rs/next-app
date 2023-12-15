@@ -10,7 +10,7 @@ export default function Page() {
     <>
       <PageHeader
         title="Blog Posts"
-        description="A collection of blog posts."
+        description="投稿した記事の一覧"
       />
 
       <PostCardContainer>

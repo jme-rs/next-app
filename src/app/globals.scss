@@ -157,6 +157,10 @@ h2 {
   border-bottom: 2px solid var(--secondary-color);
   font-size: 1.4rem;
   line-height: 3rem;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
 }
 
 h3 {
@@ -165,6 +169,10 @@ h3 {
   font-size: 1.2rem;
   line-height: 2.5rem;
   border-bottom: 1px solid var(--secondary-color);
+
+  &:first-child {
+    margin-top: 1rem;
+  }
 }
 
 h4 {

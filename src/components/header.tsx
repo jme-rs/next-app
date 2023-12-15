@@ -39,9 +39,9 @@ export function Header() {
   const links = [
     ["Home", "/"],
     ["Blog", "/blog"],
-    ["About", "/about"],
+    // ["About", "/about"],
     ["Changelog", "/changelog"],
-    ["⚠️Exp", "/experimental"],
+    ["⚠️Exp⚠️", "/experimental"],
   ];
 
 

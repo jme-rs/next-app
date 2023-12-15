@@ -4,7 +4,7 @@ export default function Island({
   children,
   expansion = false
 }: {
-  children: React.ReactNode,
+  children?: React.ReactNode,
   expansion?: boolean
 }) {
 
