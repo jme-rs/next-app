@@ -6,8 +6,14 @@ tags: [next.js, dev]
 ---
 
 
-![](nyancat.png)
+### link
 
+https://github.com/jme-rs
+https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023
+<!-- https://twitter.com/jack/status/20 -->
+<!-- https://github.com/octocat/Hello-World/blob/master/README -->
+
+![](nyancat.png)
 ![](icon-512x512.png)
 
 
@@ -60,15 +66,3 @@ console.log("test");
 >   children: [ { type: 'text', value: 'Footnotes' } ]
 > }
 > ```
-
-### link
-
-https://github.com/jme-rs
-
-### twitter
-
-https://twitter.com/jack/status/20
-
-### github
-
-https://github.com/octocat/Hello-World/blob/master/README

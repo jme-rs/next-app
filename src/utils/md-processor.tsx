@@ -79,9 +79,7 @@ function unwrapImage() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === 'img' && parent.tagName === 'p') {
-        parent.tagName = node.tagName;
-        parent.children = node.children;
-        parent.properties = node.properties;
+        parent.tagName = "div";
       }
     });
   };
@@ -104,6 +102,17 @@ function tocWrapper() {
 }
 
 
+function unwrapLink() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === 'a' && parent.tagName === 'p') {
+        parent.tagName = "div";
+      }
+    });
+  };
+}
+
+
 //
 //
 // export process function
@@ -115,13 +124,14 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
       yaml: yaml.parse,
       name: 'frontMatter'
     })
-    .use(remarkBreaks)
+    // .use(remarkBreaks)
     .use(remarkGfm)
     // .use(remarkMdx)
     .use(remarkRehype)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
+    .use(unwrapLink)
     .use(rehypeReact, {
       ...prod,
       components: {
@@ -154,13 +164,16 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
             />
           )
         },
-        // a: (props: any) => {
-        //   return (
-        //     <LinkCard
-        //       href={props.href}
-        //     />
-        //   )
-        // }
+        a: (props: any) => {
+          if (props.href.startsWith("http")) {
+            return (
+              <LinkCard
+                href={props.href}
+              />
+            )
+          }
+          return <a {...props}></a>
+        }
       },
     } as any)
     .use(chanegeFootnoteName)
