@@ -157,6 +157,7 @@ h2 {
   border-bottom: 2px solid var(--secondary-color);
   font-size: 1.4rem;
   line-height: 3rem;
+  transition: border-color 0.3s ease;
 
   &:first-child {
     margin-top: 1rem;
@@ -169,6 +170,7 @@ h3 {
   font-size: 1.2rem;
   line-height: 2.5rem;
   border-bottom: 1px solid var(--secondary-color);
+  transition: border-color 0.3s ease;
 
   &:first-child {
     margin-top: 1rem;

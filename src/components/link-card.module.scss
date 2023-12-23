@@ -12,6 +12,7 @@
   overflow: hidden;
   position: relative;
   margin: 2rem 0;
+  transition: border-color 0.3s ease;
 
   .innerContainer {
     padding: 1rem;
@@ -28,6 +29,7 @@
       text-overflow: ellipsis;
       color: var(--text-color);
       font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     .description {
