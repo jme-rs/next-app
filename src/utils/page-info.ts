@@ -1,5 +1,6 @@
 import { PageMetadata } from '@/types/page-meta';
 import { JSDOM } from 'jsdom';
+import nodefetch from 'node-fetch'
 
 
 function getTitle(document: Document): string | undefined {
@@ -23,7 +24,7 @@ function getIconURL(document: Document): string | undefined {
 }
 
 async function getDocument(url: string): Promise<Document> {
-  const res = await fetch(url);
+  const res = await nodefetch(url);
   const html = await res.text();
   const dom = new JSDOM(html);
   const document = dom.window.document;
