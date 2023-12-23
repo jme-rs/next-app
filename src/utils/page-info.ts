@@ -1,6 +1,5 @@
 import { PageMetadata } from '@/types/page-meta';
 import { JSDOM } from 'jsdom';
-// import nodefetch from 'node-fetch'
 
 
 function getTitle(document: Document): string | undefined {
