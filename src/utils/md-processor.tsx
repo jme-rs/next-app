@@ -18,7 +18,7 @@ import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
 import LinkCard from '../components/link-card';
 import MdImg from '@/components/md-img';
-// import remarkUnwrapImages from 'remark-unwrap-images';
+import islandStyles from '@/components/island.module.scss';
 
 //
 // extensions
@@ -113,6 +113,22 @@ function unwrapLink() {
 }
 
 
+function extractRowLink() {
+  return (tree: any) => {
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === 'a'
+        && parent.tagName === 'div'
+        && node.children[0].value
+        && node.children[0].value.startsWith("http")
+      ) {
+        console.log(parent);
+        node.properties.className = "row-link";
+      }
+    });
+  };
+}
+
+
 //
 //
 // export process function
@@ -132,6 +148,7 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
     .use(unwrapLink)
+    .use(extractRowLink)
     .use(rehypeReact, {
       ...prod,
       components: {
@@ -165,7 +182,7 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
           )
         },
         a: (props: any) => {
-          if (props.href.startsWith("http")) {
+          if (props.className === "row-link") {
             return (
               <LinkCard
                 href={props.href}
