@@ -47,9 +47,9 @@ body {
   font-size: 16px;
   scroll-behavior: smooth;
 
-  // @media (max-width: $mobile) {
-  //   font-size: 15px;
-  // }
+  @media (max-width: $mobile) {
+    font-size: 15px;
+  }
 
   --light-text-color: gray;
 
@@ -84,7 +84,7 @@ body {
 .wrapper {
   display: flex;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 48px;
   margin-bottom: 3rem;
   justify-content: center;
   flex: 1;
@@ -204,7 +204,6 @@ li {
 .table-wrapper {
   overflow-x: auto;
   margin: 2rem 0;
-  font-size: 0.9rem;
 
   table {
     border-collapse: collapse;

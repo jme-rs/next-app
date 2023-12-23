@@ -22,16 +22,18 @@ function getIconURL(document: Document): string | undefined {
   return iconURL?.getAttribute("href") || undefined;
 }
 
-// async function getDocument(url: string): Promise<Document> {
-//   const res = await fetch(url, { mode: "no-cors" });
-//   const html = await res.text();
-//   const document = new DOMParser().parseFromString(html, "text/html");
-//   return document;
-// }
+async function getDocument(url: string): Promise<Document> {
+  const res = await fetch(url);
+  const html = await res.text();
+  const dom = new JSDOM(html);
+  const document = dom.window.document;
+  return document;
+}
 
 export async function getPageMeta(url: string): Promise<PageMetadata> {
 
-  const document = (await JSDOM.fromURL(url)).window.document;
+  // const document = (await JSDOM.fromURL(url)).window.document;
+  const document = await getDocument(url);
 
   const title = getTitle(document);
   const description = getDescription(document);
