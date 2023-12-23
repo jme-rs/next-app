@@ -31,7 +31,7 @@ async function getDocument(url: string): Promise<Document> {
 }
 
 export async function getPageMeta(url: string): Promise<PageMetadata> {
-
+  console.log("getPageMeta", url);
   // const document = (await JSDOM.fromURL(url)).window.document;
   const document = await getDocument(url);
 
