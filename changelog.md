@@ -5,6 +5,8 @@ title: Changelog
 
 ### v0.1.0
 
+- 2023-12-24
+  - [x] Add Twitter and YouTube embed.
 - 2023-12-21
   - [x] Add external link card.
 - 2023-12-16
