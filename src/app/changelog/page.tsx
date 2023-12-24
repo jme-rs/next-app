@@ -8,6 +8,8 @@ export default function Page() {
 
   return (
     <>
+      <PageHeader title="Changelog" />
+
       <Island expansion>
         <h2>Todo</h2>
         {todo[0].content}

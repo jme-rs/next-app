@@ -14,6 +14,7 @@ export default function Page() {
         <LinkCard href="https://github.com/jme-rs" />
         <LinkCard href="https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023" />
         <LinkCard href="https://www.youtube.com/watch?v=Qw93hxIId0w" />
+        <LinkCard href="https://twitter.com/jack/status/20" />
       </Island>
     </>
   )

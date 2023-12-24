@@ -3,25 +3,20 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  border-radius: 1rem;
-  padding: 2rem;
-  padding-bottom: 1rem;
-  margin: 2rem 0;
-  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  align-items: flex-start;
+  margin-left: 0.5rem;
 
   .title {
     max-width: 100%;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 600;
-    margin-bottom: 1rem;
   }
 
   .description {
     text-align: center;
     font-size: 0.9rem;
     color: var(--light-text-color);
-    margin-bottom: 1rem;
   }
 }

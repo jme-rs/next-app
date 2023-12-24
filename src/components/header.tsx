@@ -83,7 +83,7 @@ export function Header() {
           : <meta name="theme-color" content="#ffffff" key="dark" />}
       </Head> */}
       {isDarkMode
-        ? <meta name="theme-color" content="#222222" />
+        ? <meta name="theme-color" content="#202022" />
         : <meta name="theme-color" content="#ffffff" />
       }
       <header className={styles.container}>

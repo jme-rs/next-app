@@ -59,3 +59,19 @@
     width: 6rem;
   }
 }
+
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2rem 0;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.twitter {
+  margin: 2rem 0;
+}

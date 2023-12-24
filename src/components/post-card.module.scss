@@ -3,7 +3,7 @@
 
 .container {
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   @include hover();
   background-color: var(--background-color);
   @include removeTextDecoration();
@@ -28,7 +28,7 @@
   }
 
   .text {
-    padding: 1rem;
+    padding: 1.5rem;
     padding-top: 0.5rem;
   }
 
@@ -68,5 +68,5 @@
   gap: 2rem;
   width: 100%;
   justify-content: center;
-  margin: 1.3rem 0;
+  margin: 1rem 0;
 }
