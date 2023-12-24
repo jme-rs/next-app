@@ -14,6 +14,7 @@ https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023
 > https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023
 
 https://twitter.com/jack/status/20
+https://www.youtube.com/watch?v=jNQXAC9IVRw
 https://github.com/octocat/Hello-World/blob/master/README
 
 

@@ -17,6 +17,7 @@ export default async function LinkCard({ href }: { href: string }) {
   }
 }
 
+
 async function Card({ href }: { href: string }) {
   const { title, description, imgURL } = await getPageMeta(href);
 
@@ -52,7 +53,7 @@ function TwitterCard({ href }: { href: string }) {
         <p>Setting up twttr...</p>
         <a href={href}>{href}</a>
       </blockquote>
-      <Script src="https://platform.twitter.com/widgets.js"></Script>
+      <Script src="https://platform.twitter.com/widgets.js" />
     </div>
   )
 }
