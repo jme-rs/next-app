@@ -7,7 +7,6 @@ export default async function Page() {
     <>
       <PageHeader
         title="⚠️Experimental"
-        description="実験的なコンポーネント置き場"
       />
 
       <PostCardContainer>

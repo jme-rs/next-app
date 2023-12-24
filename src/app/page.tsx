@@ -15,7 +15,7 @@ import rustSvg from "@/assets/images/All_logo_and_pictures-main/programming lang
 export default function Home() {
   return (
     <>
-      <PageHeader title="Home" description="このサイトの情報" />
+      <PageHeader title="Home" />
 
       <Island expansion>
         <h2>About This Site</h2>
