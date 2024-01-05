@@ -10,6 +10,7 @@ import pythonSvg from "@/assets/images/All_logo_and_pictures-main/programming la
 import jsSvg from "@/assets/images/All_logo_and_pictures-main/programming languages/javascript.svg";
 import tsSvg from "@/assets/images/All_logo_and_pictures-main/programming languages/typescript.svg";
 import rustSvg from "@/assets/images/All_logo_and_pictures-main/programming languages/rust.svg";
+import LinkCard from "@/components/link-card";
 
 
 export default function Home() {
@@ -18,7 +19,6 @@ export default function Home() {
       <PageHeader title="Home" />
 
       <Island expansion>
-        <h2>About This Site</h2>
         <p>
           このサイトは個人的に作成したブログ兼ポートフォリオサイトで、
           技術記事や日記などを投稿していく予定です。
@@ -28,16 +28,7 @@ export default function Home() {
         </p>
       </Island>
 
-      <Island expansion>
-        <h2>Author</h2>
-        <ul>
-          <li>情報工学科 3年 佐々木孟</li>
-          <li>
-            <a href="https://github.com/jme-rs">GitHub</a>
-            <Img src={githubSvg} alt="" className={styles.icon} />
-          </li>
-          <li><a href="https://github.com/jme-rs/next-app">このサイトのソースコード</a></li>
-        </ul>
+      {/* <Island expansion>
         <ul>
           <li>プログラミング言語
             <ul>
@@ -50,6 +41,18 @@ export default function Home() {
               </li>
               <li>Rust<Img src={rustSvg} alt="" className={styles.icon} /></li>
             </ul>
+          </li>
+        </ul>
+      </Island> */}
+
+      <Island expansion>
+        <ul>
+          <li>情報工学科 3年 佐々木孟</li>
+          <li>GitHub
+            <LinkCard href="https://github.com/jme-rs" />
+          </li>
+          <li>ソースコード
+            <LinkCard href="https://github.com/jme-rs/next-app" />
           </li>
         </ul>
       </Island>

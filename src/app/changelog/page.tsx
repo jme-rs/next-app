@@ -8,15 +8,15 @@ export default function Page() {
 
   return (
     <>
-      <PageHeader title="Changelog" />
+      <PageHeader title="Todo" />
 
       <Island expansion>
-        <h2>Todo</h2>
         {todo[0].content}
       </Island>
 
+      <PageHeader title="Changelog" />
+
       <Island expansion>
-        <h2>Changelog</h2>
         {changelog[0].content}
       </Island>
     </>
