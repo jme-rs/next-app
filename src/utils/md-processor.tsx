@@ -18,7 +18,87 @@ import yaml from "yaml";
 import { parseSelector } from "hast-util-parse-selector";
 import LinkCard from '../components/link-card';
 import MdImg from '@/components/md-img';
-import islandStyles from '@/components/island.module.scss';
+// import islandStyles from '@/components/island.module.scss';
+import { rehypeGithubAlerts } from "rehype-github-alerts";
+
+
+//
+//
+// export process function
+export function MdProcess(content: string, dir: string, toc: boolean) {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter)
+    .use(remarkExtractFrontmatter, {
+      yaml: yaml.parse,
+      name: 'frontMatter'
+    })
+    // .use(remarkBreaks)
+    .use(remarkGfm)
+    // .use(remarkMdx)
+    .use(remarkRehype)
+    .use(extractCodeBlock)
+    // .use(remarkUnwrapImages)
+    .use(unwrapImage)
+    .use(unwrapLink)
+    .use(extractRowLink)
+    .use(rehypeGithubAlerts)
+    .use(rehypeReact, {
+      ...prod,
+      components: {
+        pre: (props: any) => {
+          var lang: string | undefined;
+          var fileName: string | undefined;
+          const className = props.className?.replace("language-", "").split(":");
+          if (className && className.length === 1) {
+            lang = className[0];
+          }
+          else if (className && className.length === 2) {
+            lang = className[0];
+            fileName = className[1];
+          }
+          return (
+            <CodeBlock
+              lang={lang}
+              fileName={fileName}
+            >
+              {props.children}
+            </CodeBlock>
+          )
+        },
+        img: ({ src, alt }: { src: string, alt: string }) => {
+          return (
+            <MdImg
+              dir={dir}
+              src={src}
+              alt={alt}
+            />
+          )
+        },
+        a: (props: any) => {
+          if (props.className === "row-link") {
+            return (
+              <LinkCard
+                href={props.href}
+              />
+            )
+          }
+          return <a {...props}></a>
+        }
+      },
+    } as any)
+    .use(changeFootnoteName)
+    .use(tableWrapper)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings);
+  if (toc) {
+    processor.use(rehypeToc, { headings: ["h2", "h3"] })
+      .use(tocWrapper);
+  }
+
+  return processor.processSync(content);
+}
+
 
 //
 // extensions
@@ -39,7 +119,7 @@ function extractCodeBlock() {
 }
 
 
-function chanegeFootnoteName() {
+function changeFootnoteName() {
   return (tree: any) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === "h2" && node.properties.id === "footnote-label") {
@@ -126,81 +206,4 @@ function extractRowLink() {
       }
     });
   };
-}
-
-
-//
-//
-// export process function
-export function MdProcess(content: string, dir: string, toc: boolean) {
-  const processor = unified()
-    .use(remarkParse)
-    .use(remarkFrontmatter)
-    .use(remarkExtractFrontmatter, {
-      yaml: yaml.parse,
-      name: 'frontMatter'
-    })
-    // .use(remarkBreaks)
-    .use(remarkGfm)
-    // .use(remarkMdx)
-    .use(remarkRehype)
-    .use(extractCodeBlock)
-    // .use(remarkUnwrapImages)
-    .use(unwrapImage)
-    .use(unwrapLink)
-    .use(extractRowLink)
-    .use(rehypeReact, {
-      ...prod,
-      components: {
-        pre: (props: any) => {
-          var lang: string | undefined;
-          var fileName: string | undefined;
-          const className = props.className?.replace("language-", "").split(":");
-          if (className && className.length === 1) {
-            lang = className[0];
-          }
-          else if (className && className.length === 2) {
-            lang = className[0];
-            fileName = className[1];
-          }
-          return (
-            <CodeBlock
-              lang={lang}
-              fileName={fileName}
-            >
-              {props.children}
-            </CodeBlock>
-          )
-        },
-        img: ({ src, alt }: { src: string, alt: string }) => {
-          return (
-            <MdImg
-              dir={dir}
-              src={src}
-              alt={alt}
-            />
-          )
-        },
-        a: (props: any) => {
-          if (props.className === "row-link") {
-            return (
-              <LinkCard
-                href={props.href}
-              />
-            )
-          }
-          return <a {...props}></a>
-        }
-      },
-    } as any)
-    .use(chanegeFootnoteName)
-    .use(tableWrapper)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings);
-  if (toc) {
-    processor.use(rehypeToc, { headings: ["h2", "h3"] })
-      .use(tocWrapper);
-  }
-
-  return processor.processSync(content);
 }
