@@ -5,6 +5,8 @@ title: Changelog
 
 ### v0.1.0
 
+- 2024-01-21
+  - [x] Add syntax support for `dl`, `dt` and `dd` tags.
 - 2023-12-24
   - [x] Add Twitter and YouTube embed.
 - 2023-12-21

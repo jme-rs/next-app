@@ -19,7 +19,10 @@ import { parseSelector } from "hast-util-parse-selector";
 import LinkCard from '../components/link-card';
 import MdImg from '@/components/md-img';
 // import islandStyles from '@/components/island.module.scss';
-import { rehypeGithubAlerts } from "rehype-github-alerts";
+// import { rehypeGithubAlerts } from "rehype-github-alerts";
+import remarkDeflist from "remark-deflist";
+// import remarkDirective from "remark-fenced-divs";
+import remarkDirective from "remark-directive";
 
 
 //
@@ -36,13 +39,14 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkBreaks)
     .use(remarkGfm)
     // .use(remarkMdx)
+    .use(remarkDeflist)
+    .use(remarkDirective)
     .use(remarkRehype)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
     .use(unwrapLink)
     .use(extractRowLink)
-    .use(rehypeGithubAlerts)
     .use(rehypeReact, {
       ...prod,
       components: {

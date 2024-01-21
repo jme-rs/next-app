@@ -5,49 +5,46 @@ post: 2000-01-01
 tags: [Next.js, dev]
 ---
 
+## fenced div
 
-## gfm backquote
+:::div{#note}
+This is a note
+:::
 
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
+:::warning
+This is a warning
+:::
 
-> [!TIP]
-> Optional information to help a user be more successful.
+## definition
 
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
+term1
+: def1
+: def2
 
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
+term2
+: def1
 
 ## link
 
-https://github.com/jme-rs
-https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023
+<https://github.com/jme-rs>
+<https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023>
 
-> https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023
+> <https://zenn.dev/loglass/articles/open-loglass-tech-stack-2023>
 
-https://twitter.com/jack/status/20
-https://www.youtube.com/watch?v=jNQXAC9IVRw
-https://github.com/octocat/Hello-World/blob/master/README
-
+<https://twitter.com/jack/status/20>
+<https://www.youtube.com/watch?v=jNQXAC9IVRw>
+<https://github.com/octocat/Hello-World/blob/master/README>
 
 ## image
 
 ![](nyancat.png)
 ![](icon-512x512.png)
 
-
 # h1 don't be used
 
 Rust（ラスト）は、性能、メモリ安全性、安全な並行性を目指して設計されたマルチパラダイムのプログラミング言語である。C言語、C++に代わるシステムプログラミング言語を目指しており[^2]、構文的にはC++に似ているが[3]、「ボローチェッカー」(borrow checker) で参照の有効性を検証することによってメモリ安全性を保証できる。Rustはガベージコレクションなしでのメモリ安全性を達成しており、必要な場面で参照カウントを使うこともできる[4][5]。
 
 [^2]: 注釈
-
 
 ## h2
 
@@ -59,7 +56,6 @@ Software developer Graydon Hoare created Rust as a personal project while workin
 
 Rust has been noted for its rapid adoption,[15] and has been studied in programming language theory research.[16][17][18]
 
-
 ## text
 
 text **bold** `code`  
@@ -68,12 +64,10 @@ text **bold** `code`
 > text **bold** `code`  
 > *italic* ~~strike~~
 
-
 ## list
 
 - [ ] item
 - [x] checked
-
 
 ## table
 
@@ -81,7 +75,6 @@ text **bold** `code`
 | -------- | ------: | ---------- |
 | Text     |     5.0 | Text       |
 | markdown |   right | unified    |
-
 
 ## syntax highlight
 

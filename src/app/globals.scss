@@ -345,3 +345,17 @@ ol {
 .markdown-alert-header>svg {
   margin-right: 8px;
 }
+
+dl {
+  margin: 2rem 0;
+
+  dt {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  dd {
+    padding-left: 1rem;
+  }
+}
