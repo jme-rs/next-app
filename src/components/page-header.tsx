@@ -8,7 +8,7 @@ export default function PageHeader({
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.title}>{title}</div>
+        <h1 className={styles.title}>{title}</h1>
         {description &&
           <div className={styles.description}>{description}</div>
         }

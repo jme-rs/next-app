@@ -7,7 +7,7 @@ export default function ArticleHeader(props: PostMetadata) {
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.title}>{props.title}</div>
+        <h1 className={styles.title}>{props.title}</h1>
         <div className={styles.description}>{props.description}</div>
         <div className={styles.date}>
           <Date
