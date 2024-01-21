@@ -30,7 +30,8 @@
   @media (max-width: $mobile) {
     border-radius: 0;
     position: relative;
-    left: -1rem;
-    width: calc(100% + 2rem);
+    left: -2rem;
+    width: calc(100% + 4rem);
+    padding: 2rem;
   }
 }
