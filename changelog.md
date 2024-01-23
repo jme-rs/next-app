@@ -2,9 +2,10 @@
 title: Changelog
 ---
 
-
 ### v0.1.0
 
+- 2024-01-23
+  - [x] Add syntax support for fenced div.
 - 2024-01-21
   - [x] Add syntax support for `dl`, `dt` and `dd` tags.
 - 2023-12-24

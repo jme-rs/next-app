@@ -23,6 +23,9 @@ import MdImg from '@/components/md-img';
 import remarkDeflist from "remark-deflist";
 // import remarkDirective from "remark-fenced-divs";
 import remarkDirective from "remark-directive";
+// import remarkGfmAdmonitions from 'remark-github-beta-blockquote-admonitions'
+import { h } from 'hastscript'
+import FencedDiv from '@/components/fenced-div';
 
 
 //
@@ -40,7 +43,9 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     .use(remarkGfm)
     // .use(remarkMdx)
     .use(remarkDeflist)
+    // .use(remarkGfmAdmonitions)
     .use(remarkDirective)
+    .use(remarkFencedDiv)
     .use(remarkRehype)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
@@ -88,13 +93,25 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
             )
           }
           return <a {...props}></a>
-        }
+        },
+        div: (props: any) => {
+          if (!props.className) return <div {...props}></div>
+          if (props.className.includes("fenced-dev")) {
+            const type = props.className.split(" ")[1];
+            return (
+              <FencedDiv type={type}>
+                {props.children}
+              </FencedDiv>
+            )
+          }
+        },
       },
     } as any)
     .use(changeFootnoteName)
     .use(tableWrapper)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings);
+  // .use(rehypeFencedDiv);
   if (toc) {
     processor.use(rehypeToc, { headings: ["h2", "h3"] })
       .use(tocWrapper);
@@ -205,9 +222,55 @@ function extractRowLink() {
         && node.children[0].value
         && node.children[0].value.startsWith("http")
       ) {
-        console.log(parent);
         node.properties.className = "row-link";
       }
     });
   };
+}
+
+
+function remarkFencedDiv() {
+  return (tree: any) => {
+    visit(tree, (node, index, parent) => {
+      if (
+        node.type === 'containerDirective' ||
+        node.type === 'leafDirective' ||
+        node.type === 'textDirective'
+      ) {
+        if (node.name !== 'note'
+          && node.name !== "warning"
+        ) return
+
+        const data = node.data || (node.data = {})
+        const tagName = node.type === 'textDirective' ? 'span' : 'div'
+        const className = `fenced-dev ${node.name}`
+
+        data.hName = tagName
+        data.hProperties = h(tagName, node.attributes || {}).properties
+        data.hProperties = { ...data.hProperties, className: className }
+      }
+    });
+  };
+}
+
+
+// function rehypeFencedDiv() {
+//   return (tree: any) => {
+//     visit(tree, 'element', (node, index, parent) => {
+//       if (node.tagName === "div"
+//         && node.properties.className
+//         && node.properties.className.includes("fenced-dev")
+//       ) {
+//         console.log(node);
+//         node = <div>asdf</div>
+//         console.log(node);
+//         console.log(node);
+//       }
+//     });
+//   };
+// }
+
+
+function reactFencedDiv(props: any) {
+
 }

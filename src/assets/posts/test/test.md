@@ -7,7 +7,7 @@ tags: [Next.js, dev]
 
 ## fenced div
 
-:::div{#note}
+:::note
 This is a note
 :::
 
