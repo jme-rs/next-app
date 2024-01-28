@@ -104,6 +104,7 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
               </FencedDiv>
             )
           }
+          return <div {...props}></div>
         },
       },
     } as any)
