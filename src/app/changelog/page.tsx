@@ -4,8 +4,8 @@ import { getPosts } from "@/utils/post";
 import Markdown from "@/components/markdown";
 
 export default function Page() {
-  const changelog = getPosts("CHANGELOG.md", false);
-  const todo = getPosts("TODO.md", false);
+  const changelog = getPosts("changelog.md", false);
+  const todo = getPosts("todo.md", false);
 
   return (
     <>
