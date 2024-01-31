@@ -59,7 +59,7 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
     .use(unwrapLink)
-    // .use(extractRowLink)
+    .use(extractRowLink)
     // .use(rehypeMermaid, {
     //   strategy: "pre-mermaid"
     // })
