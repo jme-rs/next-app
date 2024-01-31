@@ -6,7 +6,7 @@ import { unified } from 'unified';
 import rehypeReact from "rehype-react";
 import remarkFrontmatter from "remark-frontmatter";
 import CodeBlock from '../components/code-block';
-import remarkBreaks from "remark-breaks";
+// import remarkBreaks from "remark-breaks";
 // import { inspect } from "unist-util-inspect";
 import * as prod from "react/jsx-runtime";
 import { visit } from "unist-util-visit";
@@ -26,6 +26,12 @@ import remarkDirective from "remark-directive";
 // import remarkGfmAdmonitions from 'remark-github-beta-blockquote-admonitions'
 import { h } from 'hastscript'
 import FencedDiv from '@/components/fenced-div';
+// import rehypeMermaid from 'rehype-mermaid';
+import styles from "@/components/markdown.module.scss";
+// import rehypeRaw from 'rehype-raw';
+// import remarkMermaid from "@southball/remark-mermaid";
+
+
 
 
 //
@@ -46,12 +52,17 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkGfmAdmonitions)
     .use(remarkDirective)
     .use(remarkFencedDiv)
+    // .use(remarkMermaid)
     .use(remarkRehype)
+    // .use(rehypeRaw)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
     .use(unwrapLink)
-    .use(extractRowLink)
+    // .use(extractRowLink)
+    // .use(rehypeMermaid, {
+    //   strategy: "pre-mermaid"
+    // })
     .use(rehypeReact, {
       ...prod,
       components: {
@@ -134,7 +145,7 @@ function extractCodeBlock() {
         parent.properties.className = node.properties.className;
       }
       else if (node.tagName === "code") {
-        node.properties.className = "inline-code-block"
+        node.properties.className = styles.inlineCodeBlock;
       }
     });
   };
@@ -158,7 +169,7 @@ function tableWrapper() {
       if (node.tagName === "table") {
         const wrapper = parseSelector("div") as any;
         wrapper.children = [node];
-        wrapper.properties.className = "table-wrapper";
+        wrapper.properties.className = styles.tableWrapper;
         parent.children[index as number] = wrapper;
       }
     });
@@ -196,7 +207,7 @@ function tocWrapper() {
         const summary = parseSelector("summary") as any;
         summary.children = [{ type: "text", value: "目次" }];
         details.children = [summary, node];
-        details.properties.className = "toc-wrapper";
+        details.properties.className = styles.tocWrapper;
         parent.children[index as number] = details;
       }
     });
@@ -272,6 +283,6 @@ function remarkFencedDiv() {
 // }
 
 
-function reactFencedDiv(props: any) {
+// function reactFencedDiv(props: any) {
 
-}
+// }

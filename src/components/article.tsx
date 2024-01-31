@@ -2,6 +2,7 @@ import ArticleHeader from './article-header';
 import Island from './island';
 import { Post } from "@/types/post";
 import styles from './article.module.scss';
+import Markdown from './markdown';
 
 export default function Article(post: Post) {
 
@@ -11,7 +12,9 @@ export default function Article(post: Post) {
         {...post.metadata}
       />
       <Island>
-        {post.content}
+        <Markdown>
+          {post.content}
+        </Markdown>
       </ Island>
     </>
   )
