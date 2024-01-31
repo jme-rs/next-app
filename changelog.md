@@ -2,6 +2,8 @@
 title: Changelog
 ---
 
+https://github.com/jme-rs/next-app/commits/master/
+
 ### v0.1.0
 
 - 2024-01-23

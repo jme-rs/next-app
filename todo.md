@@ -2,8 +2,8 @@
 title: Todo
 ---
 
-
-- [x] external link card.
-- [x] embed contents(youtube, twitter).
-- [ ] tag search.
-- [ ] KaTeX support.
+- [x] external link card
+- [x] embed contents(youtube, twitter)
+- [ ] tag search
+- [ ] mermaid support
+- [ ] KaTeX support
