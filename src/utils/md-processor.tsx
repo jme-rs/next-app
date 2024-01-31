@@ -26,12 +26,8 @@ import remarkDirective from "remark-directive";
 // import remarkGfmAdmonitions from 'remark-github-beta-blockquote-admonitions'
 import { h } from 'hastscript'
 import FencedDiv from '@/components/fenced-div';
-// import rehypeMermaid from 'rehype-mermaid';
+import rehypeMermaid from 'rehype-mermaid';
 import styles from "@/components/markdown.module.scss";
-// import rehypeRaw from 'rehype-raw';
-// import remarkMermaid from "@southball/remark-mermaid";
-
-
 
 
 //
@@ -52,17 +48,12 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkGfmAdmonitions)
     .use(remarkDirective)
     .use(remarkFencedDiv)
-    // .use(remarkMermaid)
     .use(remarkRehype)
-    // .use(rehypeRaw)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
     .use(unwrapLink)
     .use(extractRowLink)
-    // .use(rehypeMermaid, {
-    //   strategy: "pre-mermaid"
-    // })
     .use(rehypeReact, {
       ...prod,
       components: {
