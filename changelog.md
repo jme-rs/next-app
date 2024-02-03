@@ -6,6 +6,8 @@ https://github.com/jme-rs/next-app/commits/master/
 
 ### v0.1.0
 
+- 2024-02-03
+  - [x] Add KaTeX support.
 - 2024-01-23
   - [x] Add syntax support for fenced div.
 - 2024-01-21

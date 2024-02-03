@@ -6,4 +6,4 @@ title: Todo
 - [x] embed contents(youtube, twitter)
 - [ ] tag search
 - [ ] mermaid support
-- [ ] KaTeX support
+- [X] KaTeX support
