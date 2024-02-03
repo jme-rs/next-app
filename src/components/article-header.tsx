@@ -4,7 +4,7 @@ import Date from "./date";
 import { PostMetadata } from "@/types/post"
 
 export default function ArticleHeader(props: PostMetadata) {
-  return (
+  return ( 
     <>
       <div className={styles.mainContainer}>
         <h1 className={styles.title}>{props.title}</h1>
