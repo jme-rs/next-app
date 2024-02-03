@@ -26,8 +26,14 @@ import remarkDirective from "remark-directive";
 // import remarkGfmAdmonitions from 'remark-github-beta-blockquote-admonitions'
 import { h } from 'hastscript'
 import FencedDiv from '@/components/fenced-div';
-import rehypeMermaid from 'rehype-mermaid';
+// import rehypeMermaid from 'rehype-mermaid';
 import styles from "@/components/markdown.module.scss";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+// import rehypeDocument from 'rehype-document';
+
+import dynamic from 'next/dynamic'
+
 
 
 //
@@ -46,9 +52,14 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
     // .use(remarkMdx)
     .use(remarkDeflist)
     // .use(remarkGfmAdmonitions)
+    .use(remarkMath)
     .use(remarkDirective)
     .use(remarkFencedDiv)
     .use(remarkRehype)
+    // .use(rehypeDocument, {
+    //   css: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css',
+    // })
+    .use(rehypeKatex)
     .use(extractCodeBlock)
     // .use(remarkUnwrapImages)
     .use(unwrapImage)
@@ -86,7 +97,7 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
             />
           )
         },
-        a: (props: any) => {
+        a: (props: any) => { 
           if (props.className === "row-link") {
             return (
               <LinkCard
@@ -274,6 +285,4 @@ function remarkFencedDiv() {
 // }
 
 
-// function reactFencedDiv(props: any) {
-
-// }
+// function remove

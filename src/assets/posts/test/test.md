@@ -74,7 +74,7 @@ text **bold** `code`
 | react    | next.js | typescript |
 | -------- | ------: | ---------- |
 | Text     |     5.0 | Text       |
-| markdown |   right | unified    |
+| markdown |   right | unified   |
 
 ## syntax highlight
 
