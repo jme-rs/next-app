@@ -38,10 +38,10 @@ export default function Home() {
         <Markdown>
           <h2>リンク</h2>
 
-          <h3>GitHub</h3>
+          <h4>GitHub</h4>
           <LinkCard href="https://github.com/jme-rs" />
 
-          <h3>サイトのソースコード</h3>
+          <h4>サイトのソースコード</h4>
           <LinkCard href="https://github.com/jme-rs/next-app" />
         </Markdown>
       </Island>
