@@ -12,7 +12,7 @@ export default function Home() {
 
       <Island expansion>
         <Markdown>
-          <h2>このサイトについて</h2>
+          {/* <h2>このサイトについて</h2> */}
           <p>
             このサイトは個人的に作成したブログサイトで、
             技術記事や日記などを投稿していく予定です。
@@ -23,9 +23,9 @@ export default function Home() {
         </Markdown>
       </Island>
 
-      <Island expansion>
+      <Island header2="作者" expansion>
         <Markdown>
-          <h2>作者</h2>
+          {/* <h2>作者</h2> */}
           <ul>
             <li>芝浦工業大学 情報工学科 3年 佐々木孟</li>
             <li>千葉県</li>
@@ -34,10 +34,8 @@ export default function Home() {
         </Markdown>
       </Island>
 
-      <Island expansion>
+      <Island header2="リンク" expansion>
         <Markdown>
-          <h2>リンク</h2>
-
           <h4>GitHub</h4>
           <LinkCard href="https://github.com/jme-rs" />
 
