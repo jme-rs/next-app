@@ -89,6 +89,8 @@ export function MdProcess(content: string, dir: string, toc: boolean) {
           )
         },
         img: ({ src, alt }: { src: string, alt: string }) => {
+          if (src.startEith("http"))
+            return <img src={src} alt={alt} />
           return (
             <MdImg
               dir={dir}
