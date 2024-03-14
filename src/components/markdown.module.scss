@@ -57,22 +57,47 @@
     }
   }
 
-  ul {
+  // ul {
+  //   padding-left: 1.5rem;
+  //   margin: 1rem 0;
+
+  //   li {
+  //     // margin: 0.2rem 0;
+  //     line-height: 1.7rem;
+
+  //     p {
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+
+  // li {
+  //   ul {
+  //     margin: 0.2rem 0;
+  //   }
+  // }
+
+  // ol {
+  //   padding-left: 1.5rem;
+
+  //   li {
+  //     // margin: 0.2rem 0;
+  //     line-height: 1.7rem;
+  //   }
+  // }
+
+  ul, ol {
     padding-left: 1.5rem;
     margin: 1rem 0;
 
     li {
-      margin: 0.2rem 0;
-
-      p {
-        margin: 0;
-      }
+      line-height: 1.7rem;
     }
   }
 
   li {
-    ul {
-      margin: 0.2rem 0;
+    ul, ol {
+      margin: 0;
     }
   }
 
@@ -117,16 +142,8 @@
       cursor: pointer;
     }
 
-    nav.toc {
+    nav:global.toc {
       padding-left: 2rem;
-
-      ol {
-        padding-left: 1rem;
-
-        li {
-          margin: 0.2rem 0;
-        }
-      }
     }
   }
 
@@ -163,14 +180,6 @@
 
     li.task-list-item {
       list-style-type: none;
-    }
-  }
-
-  ol {
-    padding-left: 2rem;
-
-    li {
-      margin: 0.2rem 0;
     }
   }
 

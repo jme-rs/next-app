@@ -5,6 +5,24 @@ post: 2000-01-01
 tags: [Next.js, dev]
 ---
 
+## list
+
+1. test
+2. test
+   1. test
+   2. test
+      1. test
+      2. test
+3. test
+
+- test
+- test
+  - test
+  - test
+    - test
+    - test
+- test
+
 ## fenced div
 
 :::note
@@ -64,7 +82,7 @@ text **bold** `code`
 > text **bold** `code`  
 > *italic* ~~strike~~
 
-## list
+## checkbox
 
 - [ ] item
 - [x] checked
