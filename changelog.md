@@ -2,7 +2,7 @@
 title: Changelog
 ---
 
-https://github.com/jme-rs/next-app/commits/master/
+<https://github.com/jme-rs/next-app/commits/master/>
 
 ### v0.1.0
 
