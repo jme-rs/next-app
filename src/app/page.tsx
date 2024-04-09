@@ -27,9 +27,9 @@ export default function Home() {
         <Markdown>
           {/* <h2>作者</h2> */}
           <ul>
-            <li>芝浦工業大学 情報工学科 3年 佐々木孟</li>
+            <li>芝浦工業大学 情報工学科 4年 佐々木孟</li>
             <li>千葉県</li>
-            <li>低レイヤー</li>
+            <li>静的型付け</li>
           </ul>
         </Markdown>
       </Island>
