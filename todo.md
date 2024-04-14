@@ -7,3 +7,4 @@ title: Todo
 - [ ] tag search
 - [ ] mermaid support
 - [X] KaTeX support
+- [ ] コードブロックのファイル名に空白があるとビルドに失敗する。
